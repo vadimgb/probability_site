@@ -1,15 +1,14 @@
-nwf = lecture10.nw
+nwf = prob1.nw
 hfile = $(nwf:.nw=.html)
 
-all: $(hfile) lecture.py 
+all: $(hfile) ddist.py 
 
 $(hfile): $(nwf) Makefile
-	cp lecture.html $(hfile) 
-	noweave -n -filter l2h -html $(nwf)  >> $(hfile) 
-	echo "</BODY></HTML>" >> $(hfile) 
+	noweave -n -filter l2h -html $(nwf)  > help.html 
+	sed '19r help.txt' help.html > $(hfile) 
 
 
-lecture.py: $(nwf) Makefile
+ddist.py: $(nwf) Makefile
 	notangle -R$@ $(nwf) > $@
 
 

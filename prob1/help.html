@@ -1,0 +1,27 @@
+<!-- this file was generated automatically by noweave; better not edit it-->
+<h2>Теория вероятностей</h2>
+При бросании куибика может выпасть 1, 2, 3, 4, 5, 6.
+Такие собыитя мы будем называть элементарными. Вместе они
+оразуют пространство событий. Всякое подмножество в пространстве
+событий будем называть событием. Так выподение четного числа на кубики это не элементарное событие.
+Вероятность -- это функция сопоставляющая каждому событию число, 
+вероятность события. Свойства вероятности. 
+Если <i>A</i> и <i>B</i> события и <i>A * B= </i>
+<blockquote><i>
+P(A + B) =P(A) + P(B) 
+</i></blockquote>
+На python класс для дискретного распределния.
+<p><pre><dfn>&lt;ddist.py&gt;=</dfn>
+class DDist:
+        def __init__(self, dictionary):
+                self.d = dictionary
+        def draw(self):
+                x = random()
+                help = 0
+                for k in self.d:
+                        help += self.d[k]
+                        if help &gt; x:
+                                return k
+</pre><p>
+
+

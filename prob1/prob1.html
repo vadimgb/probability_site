@@ -1,0 +1,53 @@
+<!-- this file was generated automatically by noweave; better not edit it-->
+<h2>Теория вероятностей</h2>
+При бросании куибика может выпасть 1, 2, 3, 4, 5, 6.
+Такие собыитя мы будем называть элементарными. Вместе они
+оразуют пространство событий. Всякое подмножество в пространстве
+событий будем называть событием. Так выподение четного числа на кубики это не элементарное событие.
+Вероятность -- это функция сопоставляющая каждому событию число, 
+вероятность события. Свойства вероятности. 
+Если <i>A</i> и <i>B</i> события и <i>A * B= </i>
+<blockquote><i>
+P(A + B) =P(A) + P(B) 
+</i></blockquote>
+На python класс для дискретного распределния.
+<p><pre><dfn>&lt;ddist.py&gt;=</dfn>
+class DDist:
+        def __init__(self, dictionary):
+                self.d = dictionary
+        def draw(self):
+                x = random()
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+	<nav class = "nav">
+		<a class="nav-link active" href="content.html"> Содержание</a>
+		<a class="nav-link disabled" href="login.html">Вход</a>
+	</nav>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+                help = 0
+                for k in self.d:
+                        help += self.d[k]
+                        if help &gt; x:
+                                return k
+</pre><p>
+
+
