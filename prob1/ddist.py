@@ -9,5 +9,6 @@ class DDist:
                         if help > x:
                                 return k
 </pre>
+
 <img src = "fig.png">
 

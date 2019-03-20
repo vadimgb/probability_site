@@ -12,7 +12,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-	<nav class = "nav">
+	<nav class = "nav nav-tabs">
 		<a class="nav-link active" href="content.html"> Содержание</a>
 		<a class="nav-link disabled" href="login.html">Вход</a>
 	</nav>
