@@ -5,7 +5,7 @@ all: $(hfile) ddist.py
 
 $(hfile): $(nwf) Makefile
 	cat  $(nwf)   > help.html 
-	sed '19r help.html' help.txt > $(hfile) 
+	sed '20r help.html' help.txt > $(hfile) 
 
 
 ddist.py: $(nwf) Makefile
