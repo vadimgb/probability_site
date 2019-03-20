@@ -1,22 +1,3 @@
-<!-- this file was generated automatically by noweave; better not edit it-->
-<h2>Теория вероятностей</h2>
-При бросании куибика может выпасть 1, 2, 3, 4, 5, 6.
-Такие собыитя мы будем называть элементарными. Вместе они
-оразуют пространство событий. Всякое подмножество в пространстве
-событий будем называть событием. Так выподение четного числа на кубики это не элементарное событие.
-Вероятность -- это функция сопоставляющая каждому событию число, 
-вероятность события. Свойства вероятности. 
-Если <i>A</i> и <i>B</i> события и <i>A * B= </i>
-<blockquote><i>
-P(A + B) =P(A) + P(B) 
-</i></blockquote>
-На python класс для дискретного распределния.
-<p><pre><dfn>&lt;ddist.py&gt;=</dfn>
-class DDist:
-        def __init__(self, dictionary):
-                self.d = dictionary
-        def draw(self):
-                x = random()
 <!doctype html>
 <html lang="en">
   <head>
@@ -36,6 +17,32 @@ class DDist:
 		<a class="nav-link disabled" href="login.html">Вход</a>
 	</nav>
 
+При бросании куибика может выпасть 1, 2, 3, 4, 5, 6.
+Такие собыитя мы будем называть элементарными. Вместе они
+оразуют пространство событий. Всякое подмножество в пространстве
+событий будем называть событием. Так выподение четного числа на кубики это не элементарное событие.
+Вероятность -- это функция сопоставляющая каждому событию число, 
+вероятность события. Свойства вероятности. 
+Если $A$ и $B$ события и $A * B= \varnothing$
+$$
+	P(A + B) =P(A) + P(B) 
+$$
+На python класс для дискретного распределния.
+<pre>
+<<ddist.py>>=
+class DDist:
+	def __init__(self, dictionary):
+		self.d = dictionary
+	def draw(self):
+		x = random()
+		help = 0
+		for k in self.d:
+			help += self.d[k]
+			if help > x:
+				return k
+</pre>
+<img src = "fig.png">
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -43,11 +50,3 @@ class DDist:
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
-                help = 0
-                for k in self.d:
-                        help += self.d[k]
-                        if help &gt; x:
-                                return k
-</pre><p>
-
-

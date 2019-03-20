@@ -4,7 +4,7 @@ hfile = $(nwf:.nw=.html)
 all: $(hfile) ddist.py 
 
 $(hfile): $(nwf) Makefile
-	cat  $(nwf)   > help.html 
+	noweave -n -filter l2h -html $(nwf) | htmltoc  > help.html 
 	sed '19r help.html' help.txt > $(hfile) 
 
 

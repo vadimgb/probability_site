@@ -8,3 +8,6 @@ class DDist:
                         help += self.d[k]
                         if help > x:
                                 return k
+</pre>
+<img src = "fig.png">
+
