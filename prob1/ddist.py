@@ -11,5 +11,3 @@ class DDist:
 </code>
 </pre>
 
-<img src = "fig.png">
-
