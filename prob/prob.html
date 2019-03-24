@@ -1,0 +1,69 @@
+<!-- this file was generated automatically by noweave; better not edit it-->
+<html><head><title>prob.nw</title></head><body>article
+
+
+
+
+<h2><a name=toc1>Дисктретныое распределине</a></h2>
+Рассмотрим опыт с подбрасыванием монеты.
+Мы будем подбрасывать монету n раз и записывать
+чилсо выпадений орла m. Назоваем частотой выпадения
+орла отношение <i>m/n</i>. Частоа случайная величина.
+Для начала выберим n равным 10. Проведме опыт 8
+раз и запишем полученные частоты в таблицу.
+<a name="exp1"><b>[*]</b></a>
+[0.1, 0.9, 0.2
+]
+Далее проведем выберем n раным 1000. И результы
+запишем в таблицу.
+<blockquote><i>[0.45, 0.51]</i></blockquote>
+<a name="NWD2k73uC-1">Мы видим, что во втором случае </a>
+частоа стала иметь меншьее разброс. 
+При росте числа бросаний уменьшается разброс значений и они
+стремяться к предельному значению. Это предельное значение
+назовем вероятносью выпадения орла. 
+<p>
+В теории вероятностей вводится понятие дисктретного распределения.
+Оно определяется множестовом элементарных событий и вероятностью
+для них. Воспользуемся python для формального введения этого понятия.
+<p><pre><a name="NW2k73uC-21OKZ6-1" href="#NWD2k73uC-1"><dfn>&lt;ddist.py&gt;=</dfn></a>
+from random import random
+class DDist:
+        def __init__(self, dictionary):
+                '''dictionary - словарь в нем 
+                ключи - собыбтия, значения их вероятности'''
+                self.d = dictionary
+        def prob(self, k):
+                '''вычисляет вероятность события k'''
+                if k in self.d:
+                        return self.d[k]
+                else:
+                        return 0
+        def draw(self):
+                '''генерирует псевдослучайное собыите'''
+                x = random()
+                help = 0
+                for k in self.d:
+                        help += self.d[k]
+                        if help &gt; x:
+                                return k
+        def trials(self, nTrials):
+                '''вычисляет список из nTrials псевдослучайных событий'''
+                return [self.draw() for k in range(nTrials)]
+</pre><p>
+
+<h2><a name=toc2><a name="NWD2k73uC-2">Аксиомы вероятноти</a></a></h2>
+<a name="pr1"><b>[*]</b></a>
+P(A B) = P(A) + P(B)
+
+Свойство (<a href="#exp1">[&lt;-]</a>).
+
+<p>
+
+<ul>
+<li><a href="#NWD2k73uC-1"><i>&lt;ddist.py&gt;</i></a>: <a href="#NWD2k73uC-1">D1</a>
+</ul>
+<ul>
+</ul>
+</body></html>
+
