@@ -1,4 +1,20 @@
 from random import random
+def removeElt(k, i):
+        '''Удаляет из k  события i элемент'''
+        result = k[:i] + k[i+1:] 
+        if len(result) == 1: 
+                return result[0] 
+        else: 
+                return result
+
+def incrDictEntry(d, k, v):
+        '''В словарь d значение для
+        ключа k увеличивает на v''' 
+        if k in d: 
+                d[k] += v 
+        else: 
+                d[k] = v
+
 class DDist:
         def __init__(self, dictionary):
                 '''dictionary - словарь в нем 
@@ -22,27 +38,44 @@ class DDist:
                 '''вычисляет список из nTrials псевдослучайных событий'''
                 return [self.draw() for k in range(nTrials)]
         def __repr__(self):
-                return str(self.dic)
+                return str(self.d)
+        def marginalizeOut(self, i):
+                '''метод DDist применятестя только
+                к совместным распределениям, i индекс
+                переменной которую мы хотим вынести'''
+                d = {}
+                for oldK in self.d:
+                    k = removeElt(oldK, i)
+                    incrDictEntry(d, k, self.d[oldK])
+                return DDist(d)
 #H орел, T - решка.
 dm = DDist({"H":1/2, "T":1/2})
 print(dm.trials(8))
+PAB = DDist({("H", "H"):1/4, ("H", "T"):1/4, ("T", "H"):1/4, ("T", "T"):1/4})
+PA = PAB.marginalizeOut(1)
+print(PA)
 def pTestGivenDis(d):
         if d == "болен":
                 return DDist({"положительный":0.99, "отрицательный":0.01})
         elif d == "здоров":
                 return DDist({"положительный":0.001, "отрицательный":0.999})
         else:
-                raise Exception("неправильное значение для d")
+                raise Exception("неправильное значение для D")
+print(pTestGivenDis("здоров").prob("отрицательный"))
 def JDist(B, AgB):
+        '''B распределние сулчайной величины,
+        AgB условное распределение'''
         res = {}
         for b in B.d:
                 Agb = AgB(b)
                 for a in Agb.d:
-                        res[descartes(a, b)] = Agb.d[a] * B.d[b]
+                        res[descartes(b, a)] = Agb.d[a] * B.d[b]
                         
         return res
 
 def descartes(a, b):
+        '''Вспомогательная функция
+        объединяет значения величин в tuple'''
         if type(a) == tuple and type(b) == tuple:
                 return a + b
         elif type(a) == tuple:
