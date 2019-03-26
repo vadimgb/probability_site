@@ -1,3 +1,4 @@
+<p><a href="prob.zip">Исходный код к темем</a>
 <h2>Дискретное распределение</h2>
 <p>Босим n раз монету, пусть m раз выпал орел.
 f = m/n -  частота выпадения орла.
@@ -87,7 +88,7 @@ $$</li>
 определим его в python, как класс DDist. </p>
 <pre><code>
 <<ddist.py>>=
-from random import random
+from random import random 
 <<вспомогательные функции>>
 class DDist:
 	def __init__(self, dictionary):
@@ -114,12 +115,14 @@ class DDist:
 	def __repr__(self):
 		return str(self.d)
 	<<маргинальное распределение>>
+	<<условие на переменную>>
 @
 </code>
 </pre>
 Так для бросания монеты получаем.
 <pre><code>
-<<ddist.py>>=
+<<prob1.py>>=
+from ddist import DDist, JDist
 #H орел, T - решка.
 dm = DDist({"H":1/2, "T":1/2})
 print(dm.trials(8))
@@ -188,7 +191,7 @@ def incrDictEntry(d, k, v):
 </pre>
 Проверим 
 <pre>
-<<ddist.py>>=
+<<prob1.py>>=
 PAB = DDist({("H", "H"):1/4, ("H", "T"):1/4, ("T", "H"):1/4, ("T", "T"):1/4})
 PA = PAB.marginalizeOut(1)
 print(PA)
@@ -235,7 +238,7 @@ $$P(A \cap B) = P(A)  P(B)$$
 болен или здоров. Переменная T результат теста принимает значения: 
 положительный или отрицательный. \(P(T \mid D)\) в python получим
 <pre>
-<<ddist.py>>=
+<<prob1.py>>=
 def pTestGivenDis(d):
 	if d == "болен":
 		return DDist({"положительный":0.99, "отрицательный":0.01})
@@ -249,7 +252,7 @@ def pTestGivenDis(d):
 </p>
 Распечатаем 
 <pre>
-<<ddist.py>>=
+<<prob1.py>>=
 print(pTestGivenDis("здоров").prob("отрицательный"))
 @
 
@@ -272,7 +275,7 @@ def JDist(B, AgB):
 		for a in Agb.d:
 			res[descartes(b, a)] = Agb.d[a] * B.d[b]
 			
-	return res
+	return DDist(res)
 
 def descartes(a, b):
 	'''Вспомогательная функция
@@ -292,7 +295,7 @@ def descartes(a, b):
 </p>
 <p>Рассмотрим пример.
 <pre>
-<<ddist.py>>=
+<<prob1.py>>=
 PA = DDist({"a1":0.9, "a2":0.1})
 def PBgA(a):
 	if a == "a1":
@@ -310,3 +313,31 @@ print(PAB)
 {('a1', 'b1'): 0.63, ('a1', 'b2'): 0.27, ('a2', 'b1'): 0.02, ('a2', 'b2'): 0.08}
 </pre>
 </p>
+<p>Пусть у нас есть совместное распределение случайных величин
+A, B, мы хотим построить распределние величины A при условии
+что величина B=b.</p>
+<pre>
+<<условие на переменную>>=
+def conditionOnVar(self, index, val):
+	res = {}
+	norm = 0
+	for k in self.d:
+		if k[index] == val:
+			norm += self.prob(k)
+	for k in self.d:
+		if k[index] == val:
+			kn = removeElt(k, index)
+			res[kn] = self.prob(k)/norm
+	return DDist(res)	
+@
+
+</pre>
+<pre>
+<<prob1.py>>=
+print(PAB.conditionOnVar(1, 'b1'))
+@
+</pre>
+Получили
+<pre>
+{'a1': 0.9692, 'a2': 0.0307}
+</pre>
