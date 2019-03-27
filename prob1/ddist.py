@@ -17,17 +17,18 @@ def incrDictEntry(d, k, v):
 
 class DDist:
         def __init__(self, dictionary):
-                '''dictionary - словарь в нем 
-                ключи - собыбтия, значения их вероятности'''
+                '''dictionary - словарь, в нем 
+                ключи - элементарные собыбтия, 
+                значения их вероятности'''
                 self.d = dictionary
         def prob(self, k):
-                '''вычисляет вероятность события k'''
+                '''вычисляет вероятность элементарного события k'''
                 if k in self.d:
                         return self.d[k]
                 else:
                         return 0
         def draw(self):
-                '''генерирует псевдослучайное собыите'''
+                '''генерирует псевдослучайное элементарное собыите'''
                 x = random()
                 help = 0
                 for k in self.d:

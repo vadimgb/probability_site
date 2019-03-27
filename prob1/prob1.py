@@ -1,3 +1,16 @@
+from random import choices
+res = choices([0, 1], k = 10)
+print(res)
+def flips(nFlips):
+        '''nFlips число бросаний монеты,
+        возвращает h - частоту выпадения орла.'''
+        res = choices([0, 1], k = nFlips)
+        h = sum(res)/nFlips #sum(res) число выпадений орла 
+        return  h
+res = [flips(10) for k in range(8)]
+print(res)
+res = [flips(1000) for k in range(8)]
+print(res)
 from ddist import DDist, JDist
 #H орел, T - решка.
 dm = DDist({"H":1/2, "T":1/2})
