@@ -5,6 +5,6 @@ html/prob.html: prob.nw test.tex ddist.py
 #--splitat=section --splitnaming=label 
 	
 ddist.py:  prob.nw
-	notangle -Rddist.py prob.nw > ddist.py
+	notangle -Rprob.py prob.nw > ddist.py
 clean:
 	rm ddist.py html/prob.html

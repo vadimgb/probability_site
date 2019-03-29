@@ -12,7 +12,7 @@ print(res)
 res = [flips(1000) for k in range(8)]
 print(res)
 from ddist import DDist, JDist
-#H орел, T - решка.
+#H орёл, T - решка.
 dm = DDist({"H":1/2, "T":1/2})
 print(dm.trials(8))
 PAB = DDist({("H", "H"):1/4, ("H", "T"):1/4, ("T", "H"):1/4, ("T", "T"):1/4})

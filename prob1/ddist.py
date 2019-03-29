@@ -18,7 +18,7 @@ def incrDictEntry(d, k, v):
 class DDist:
         def __init__(self, dictionary):
                 '''dictionary - словарь, в нем 
-                ключи - элементарные собыбтия, 
+                ключи - элементарные события, 
                 значения их вероятности'''
                 self.d = dictionary
         def prob(self, k):
@@ -28,7 +28,7 @@ class DDist:
                 else:
                         return 0
         def draw(self):
-                '''генерирует псевдослучайное элементарное собыите'''
+                '''генерирует псевдослучайное элементарное событие'''
                 x = random()
                 help = 0
                 for k in self.d:
@@ -41,7 +41,7 @@ class DDist:
         def __repr__(self):
                 return str(self.d)
         def marginalizeOut(self, i):
-                '''метод DDist применятестя только
+                '''метод DDist применяется только
                 к совместным распределениям, i индекс
                 переменной которую мы хотим вынести'''
                 d = {}
@@ -61,7 +61,7 @@ class DDist:
                                 res[kn] = self.prob(k)/norm
                 return DDist(res)       
 def JDist(B, AgB):
-        '''B распределние сулчайной величины,
+        '''B распределение случайной величины,
         AgB условное распределение'''
         res = {}
         for b in B.d:
