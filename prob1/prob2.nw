@@ -1,0 +1,30 @@
+<h2>Формула Байеса</h2>
+Если \(A_j\) - несовместные события, 
+покрывающие все поле собычтий, то 
+для всякого событи \(B\) получаем 
+$$
+	P(B) = \sum_j P(A)P(B \mid A)
+$$
+Эта теорема о разложении вероятности по
+вероятностям полного набора событий.
+Дабавим метод в ddist.py.
+<pre>
+<<ddist.py>>=
+def totalProbability(pA, pBgivenA):
+	return JDist(pa, pBgivenA).marginalizeOut(0)
+@
+</pre>
+Используя формулу условной вероятности и 
+разложение по набору событий поучаем формулу Байеса
+$$
+	P(A_i \mid B) = frac{P(A_i) P(B \mid A_i)}{\sum_j P(A_j)P(B \mid A_j)  
+$$
+<pre>
+<<ddist.py>>=
+def bayesEvidence(pA, pBgA, bVal):
+	return JDist(pA, pBgA).marginalizeOut(1, bVal)
+@
+</pre>
+<<prob1.py>>=
+pDis = ddist.DDist({True: 0.001, False: 0.999})
+ddist.bayesEvidence(pDis, pTestGivenDis, 	

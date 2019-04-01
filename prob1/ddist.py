@@ -60,6 +60,8 @@ class DDist:
                                 kn = removeElt(k, index)
                                 res[kn] = self.prob(k)/norm
                 return DDist(res)       
+        def condDist(self, index):
+                return lambda val:self.conditionOnVar(index, val)
 def JDist(B, AgB):
         '''B распределение случайной величины,
         AgB условное распределение'''

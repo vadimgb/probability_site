@@ -130,15 +130,16 @@ class DDist:
 		return str(self.d)
 	<<маргинальное распределение>>
 	<<условие на переменную>>
+	<<условное распределение>>
 @
 </code>
 </pre>
 Так для бросания монеты получаем.
 <pre><code>
 <<prob1.py>>=
-from ddist import DDist, JDist
+import ddist
 #H орёл, T - решка.
-dm = DDist({"H":1/2, "T":1/2})
+dm = ddist.DDist({"H":1/2, "T":1/2})
 print(dm.trials(8))
 @
 </code></pre>
@@ -210,7 +211,7 @@ def incrDictEntry(d, k, v):
 Проверим 
 <pre>
 <<prob1.py>>=
-PAB = DDist({("H", "H"):1/4, ("H", "T"):1/4, ("T", "H"):1/4, ("T", "T"):1/4})
+PAB = ddist.DDist({("H", "H"):1/4, ("H", "T"):1/4, ("T", "H"):1/4, ("T", "T"):1/4})
 PA = PAB.marginalizeOut(1)
 print(PA)
 @
@@ -259,9 +260,9 @@ $$P(A \cap B) = P(A)  P(B)$$
 <<prob1.py>>=
 def pTestGivenDis(d):
 	if d == "болен":
-		return DDist({"положительный":0.99, "отрицательный":0.01})
+		return ddist.DDist({"положительный":0.99, "отрицательный":0.01})
 	elif d == "здоров":
-		return DDist({"положительный":0.001, "отрицательный":0.999})
+		return ddist.DDist({"положительный":0.001, "отрицательный":0.999})
 	else:
 		raise Exception("неправильное значение для D")
 @
@@ -314,14 +315,14 @@ def descartes(a, b):
 <p>Рассмотрим пример.
 <pre>
 <<prob1.py>>=
-PA = DDist({"a1":0.9, "a2":0.1})
+PA = ddist.DDist({"a1":0.9, "a2":0.1})
 def PBgA(a):
 	if a == "a1":
-		return DDist({"b1":0.7, "b2":0.3})
+		return ddist.DDist({"b1":0.7, "b2":0.3})
 	else:
-		return DDist({"b1":0.2, "b2":0.8})
+		return ddist.DDist({"b1":0.2, "b2":0.8})
 
-PAB = JDist(PA, PBgA)
+PAB = ddist.JDist(PA, PBgA)
 print(PAB)
 @
 
@@ -358,4 +359,17 @@ print(PAB.conditionOnVar(1, 'b1'))
 Получили
 <pre>
 {'a1': 0.9692, 'a2': 0.0307}
+</pre>
+Определим метод класса DDist, который 
+создаёт новое условное распределение
+<pre>
+<<условное распределение>>=
+def condDist(self, index):
+	return lambda val:self.conditionOnVar(index, val)
+@
+</pre>
+<pre>
+<<prob1.py>>=
+print(PAB.condDist(1)('b1'))
+@
 </pre>

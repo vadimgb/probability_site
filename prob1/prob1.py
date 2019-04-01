@@ -36,3 +36,4 @@ def PBgA(a):
 PAB = JDist(PA, PBgA)
 print(PAB)
 print(PAB.conditionOnVar(1, 'b1'))
+print(PAB.condDist(1)('b1'))

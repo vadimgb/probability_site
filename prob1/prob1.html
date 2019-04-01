@@ -150,6 +150,7 @@ class DDist:
 		return str(self.d)
 	<<маргинальное распределение>>
 	<<условие на переменную>>
+	<<условное распределение>>
 @
 </code>
 </pre>
@@ -378,6 +379,17 @@ print(PAB.conditionOnVar(1, 'b1'))
 Получили
 <pre>
 {'a1': 0.9692, 'a2': 0.0307}
+</pre>
+<pre>
+<<условное распределение>>=
+def condDist(self, index):
+	return lambda val:self.conditionOnVar(index, val)
+@
+</pre>
+<pre>
+<<prob1.py>>=
+print(PAB.condDist(1)('b1'))
+@
 </pre>
 
 	</div>

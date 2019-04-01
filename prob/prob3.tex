@@ -1,0 +1,326 @@
+\nwfilename{prob3.nw}\nwbegindocs{0}\href{prob.zip}{Исходный код к теме}% ===> this file was generated automatically by noweave --- better not edit it
+\section{Дискретное распределение}
+Бросим n раз монету, пусть m раз выпал орёл.
+f = m/n -  частота выпадения орла.
+Это - случайная величина, 
+Исследуем её при помощи компьютерной симуляции. 
+Для этого нам понадобится модуль random, он содержит 
+генераторы псевдослучайных значений.
+Например
+\nwenddocs{}\nwbegincode{1}\moddef{prob.py}\endmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+from random import choices
+res = choices([0, 1], k = 10)
+print(res)
+\nwendcode{}\nwbegindocs{2}\nwdocspar
+res будет содержать список из k нулей и единиц,
+с генерированных псевдослучайно.
+
+{\Tt{}1,\ 0,\ 1,\ 1,\ 1,\ 0,\ 1,\ 0,\ 1,\ 0\nwendquote}
+
+Единицу будем считать выпадением орла на монете,
+а 0 - решки.
+\nwenddocs{}\nwbegincode{3}\moddef{prob.py}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+def flips(nFlips):
+        '''nFlips число бросаний монеты,
+        возвращает h - частоту выпадения орла.'''
+        res = choices([0, 1], k = nFlips)
+        h = sum(res)/nFlips 
+        return  h
+\nwendcode{}\nwbegindocs{4}\nwdocspar
+Для начала будем бросать по 10 раз и записывать частоту.
+Проведём это опыт 8 раз
+\nwenddocs{}\nwbegincode{5}\moddef{prob.py}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+res = [flips(10) for k in range(8)]
+print(res)
+\nwendcode{}\nwbegindocs{6}\nwdocspar
+получили
+
+{\Tt{}0.5,\ 0.4,\ 0.6,\ 0.5,\ 0.7,\ 0.3,\ 0.8,\ 0.6\nwendquote}
+
+Мы видим что частота имеет сильно различающиеся значения.
+Разница между самым большим 0.8 и самым маленьким 0.3, 
+равна 0.5. 
+
+Будем бросать монету 1000 раз и записывать частоту.
+\nwenddocs{}\nwbegincode{7}\moddef{prob.py}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+res = [flips(1000) for k in range(8)]
+print(res)
+\nwendcode{}\nwbegindocs{8}\nwdocspar
+получили
+\nwenddocs{}\nwbegincode{9}\moddef{}\endmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+[0.515, 0.484, 0.522, 0.498, 0.498, 0.513, 0.511, 0.486]
+\nwendcode{}\nwbegindocs{10}\nwdocspar
+Значения близки к 0.5, их разброс стал гораздо меньше.
+Самая большая разница равна 0.038.
+Мы получили, что при увеличении числа бросаний,
+частота стремиться к некоторому пределу, 
+назовём его  вероятностью выпадения орла.
+
+
+
+Выпадение орла или решки называют элементарными событиями. 
+При бросании кубика элементарными событием будет, например,
+выпадение 1. Все элементарные события образуют множество 
+событий (мир). 
+Всякое подмножество  множества
+событий будем называть событием. 
+Так событие выпадение чётного числа на кубике - это 
+подмножество [2, 4, 6]. Если множество событий дискретное,
+то мы можем задать для каждого элементарного события его 
+вероятность. Эту функцию называют дискретным распределением вероятностей.
+Множество событий с заданным на нем распределением вероятностей 
+называют
+вероятностным пространством. А элементарные события можно назвать
+точками вероятностного пространства.
+Вероятностное пространство введено для формализации понятия вероятности.
+
+На событиях мы можем задать операции 
+сложения(\(+, \cup\)) и умножения (\(*,\cap\)).
+\(A \cup B\) произошло \(A\) или \(B\).  
+\(A \cap B\) произошло \(A\) и \(B\). 
+
+Приведём аксиомы вероятности.
+\begin{itemize}
+\item Если \(A\) и \(B\) несовместны, т.е.  \(A * B= \varnothing\)
+то
+        $$ P(A + B) = P(A) + P(B) $$
+\item Если U множество событий, то
+        $$ P(U) = 1 $$
+\item
+        $$ P(\varnothing) = 0 $$
+\end{itemize}
+
+Чтобы придать точность понятию дискретное вероятностное пространство,
+определим его в python, как класс DDist. 
+\nwenddocs{}\nwbegincode{11}\moddef{ddist.py}\endmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+from random import random 
+\LA{}вспомогательные функции\RA{}
+class DDist:
+        def __init__(self, dictionary):
+                '''dictionary - словарь, в нем 
+                ключи - элементарные события, 
+                значения их вероятности'''
+                self.d = dictionary
+        def prob(self, k):
+                '''вычисляет вероятность элементарного события k'''
+                if k in self.d:
+                        return self.d[k]
+                else:
+                        return 0
+        def draw(self):
+                '''генерирует псевдослучайное элементарное событие'''
+                x = random()
+                help = 0
+                for k in self.d:
+                        help += self.d[k]
+                        if help > x:
+                                return k
+        def trials(self, nTrials):
+                '''вычисляет список из nTrials псевдослучайных событий'''
+                return [self.draw() for k in range(nTrials)]
+        def __repr__(self):
+                return str(self.d)
+        \LA{}маргинальное распределение\RA{}
+        \LA{}условие на переменную\RA{}
+\nwendcode{}\nwbegindocs{12}\nwdocspar
+Так для бросания монеты получаем.
+\nwenddocs{}\nwbegincode{13}\moddef{prob.py}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+from ddist import DDist, JDist
+#H орёл, T - решка.
+dm = DDist(\{"H":1/2, "T":1/2\})
+print(dm.trials(8))
+\nwendcode{}\nwbegindocs{14}\nwdocspar
+Получаем
+\nwenddocs{}\nwbegincode{15}\moddef{}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+['H', 'H', 'H', 'T', 'T', 'T', 'T', 'T']
+\nwendcode{}\nwbegindocs{16}\nwdocspar
+\section{Маргинальное (частное) распределение}
+В геометрии положение точки на плоскости
+удобно задавать при помощи двух переменных
+x и y. Также и теории вероятности элементарное
+событие иногда удобно задавать при помощи
+нескольких случайных переменных. 
+Распределение в таком случае будем называть совместным
+распределением случайных переменных.
+Так при
+бросании двух монет удобно
+использовать пару случайных переменных
+принимающих значения орёл или решка.
+Если задано совместное распределение P(A,B)
+двух случайных переменных A, B, мы можем
+рассмотреть отдельно распределение величины A.
+Такое распределение называется маргинальным
+или частным. И оно будет задаваться формулой
+$$ P(a) = \sum_{b \in B} P(a, b) $$
+Большой буквой обозначаем случайную переменную,
+а маленько её значение.
+Добавим метод  в определения класса
+DDist.
+\nwenddocs{}\nwbegincode{17}\moddef{маргинальное распределение}\endmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+def marginalizeOut(self, i):
+        '''метод DDist применяется только
+        к совместным распределениям, i индекс
+        переменной которую мы хотим вынести'''
+        d = \{\}
+        for oldK in self.d:
+            k = removeElt(oldK, i)
+            incrDictEntry(d, k, self.d[oldK])
+        return DDist(d)
+\nwendcode{}\nwbegindocs{18}\nwdocspar
+
+Приведём вспомогатльеные функции
+\nwenddocs{}\nwbegincode{19}\moddef{вспомогательные функции}\endmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+def removeElt(k, i):
+        '''Удаляет из k  события i элемент'''
+        result = k[:i] + k[i+1:] 
+        if len(result) == 1: 
+                return result[0] 
+        else: 
+                return result
+
+def incrDictEntry(d, k, v):
+        '''В словарь d значение для
+        ключа k увеличивает на v''' 
+        if k in d: 
+                d[k] += v 
+        else: 
+                d[k] = v
+
+\nwendcode{}\nwbegindocs{20}\nwdocspar
+
+Проверим 
+\nwenddocs{}\nwbegincode{21}\moddef{prob.py}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+PAB = DDist(\{("H", "H"):1/4, ("H", "T"):1/4, ("T", "H"):1/4, ("T", "T"):1/4\})
+PA = PAB.marginalizeOut(1)
+print(PA)
+\nwendcode{}\nwbegindocs{22}\nwdocspar
+
+Получили
+\nwenddocs{}\nwbegincode{23}\moddef{}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+\{"H":0.5, "T":0.5\}
+\nwendcode{}\nwbegindocs{24}\nwdocspar
+\section{Условная вероятность}
+
+Условную вероятность события A при условии, что произошло B,
+обозначим \(P(A\mid B)\). Например событие B выпало чётное число
+очков на кубике. Событие A выпала 6. Событие B состоит из трёх
+равновероятных событий. Событие A одно из трёх.
+
+$$P(A \mid B) = \frac{1}{3}$$
+Видим, что для равновероятных событий, условная вероятность равна
+отношению числа элементарных событий произведения к числу
+элементарных событий события B. Обобщая эти аргументы запишем
+$$P(A \mid B) = \frac{P(A \cap B)}{P(B)}$$
+И из этой формулы поучаем
+$$P(A \cap B) = P(B) P(A \mid B) $$
+Если условная вероятность равна безусловной,
+$$P(A | B) = P(A)$$
+то будем говорить что событие A не зависти от B.
+Знание о том, что произошло событие B, не влияет
+на оценку вероятности события A.
+В этом случае формула произведения выше примет вид
+$$P(A \cap B) = P(A)  P(B)$$
+Воспользуемся этим правилом для расчёта в следующем случае.
+Мы бросаем два кубика: один красный, другой зелёный. Вероятность выпадения на красном 1 равна 1/6, вероятность 
+выпадения на зелёном 6 не зависит от того, что выпало на краном
+и тоже равна 1/6. Вероятность выпадения этих двух событий одновременно
+будет равна произведению этих вероятностей и равна 1/36.
+
+Рассмотрим условное распределение вероятности \(P(A\mid B)\),
+когда A и  B случайные переменные. В этом случае это будет
+функция, которая для каждого значения b из B, сопоставляет
+распределение для A.
+Рассмотрим пример моделирования медицинского теста. 
+Случайная переменная D задаёт состояние пациента, принимает одно из двух значений:
+болен или здоров. Переменная T результат теста принимает значения: 
+положительный или отрицательный. \(P(T \mid D)\) в python получим
+\nwenddocs{}\nwbegincode{25}\moddef{prob.py}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+def pTestGivenDis(d):
+        if d == "болен":
+                return DDist(\{"положительный":0.99, "отрицательный":0.01\})
+        elif d == "здоров":
+                return DDist(\{"положительный":0.001, "отрицательный":0.999\})
+        else:
+                raise Exception("неправильное значение для D")
+\nwendcode{}\nwbegindocs{26}\nwdocspar
+
+Распечатаем 
+\nwenddocs{}\nwbegincode{27}\moddef{prob.py}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+print(pTestGivenDis("здоров").prob("отрицательный"))
+\nwendcode{}\nwbegindocs{28}\nwdocspar
+
+Получили
+\nwenddocs{}\nwbegincode{29}\moddef{}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+0.999
+\nwendcode{}\nwbegindocs{30}\nwdocspar
+
+Зададим функцию, генерирующую совместное распределение 
+случайных величин A и B по распределению случайной величины 
+B и условному распределению A.
+\nwenddocs{}\nwbegincode{31}\moddef{ddist.py}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+def JDist(B, AgB):
+        '''B распределение случайной величины,
+        AgB условное распределение'''
+        res = \{\}
+        for b in B.d:
+                Agb = AgB(b)
+                for a in Agb.d:
+                        res[descartes(b, a)] = Agb.d[a] * B.d[b]
+                        
+        return DDist(res)
+
+def descartes(a, b):
+        '''Вспомогательная функция
+        объединяет значения величин в tuple'''
+        if type(a) == tuple and type(b) == tuple:
+                return a + b
+        elif type(a) == tuple:
+                return a + (b,)
+        elif type(b) == tuple:
+                reutrn (a,) + b
+        else:
+                return (a, b)
+
+\nwendcode{}\nwbegindocs{32}\nwdocspar
+
+Рассмотрим пример.
+\nwenddocs{}\nwbegincode{33}\moddef{prob.py}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+PA = DDist(\{"a1":0.9, "a2":0.1\})
+def PBgA(a):
+        if a == "a1":
+                return DDist(\{"b1":0.7, "b2":0.3\})
+        else:
+                return DDist(\{"b1":0.2, "b2":0.8\})
+
+PAB = JDist(PA, PBgA)
+print(PAB)
+\nwendcode{}\nwbegindocs{34}\nwdocspar
+
+Получили
+\nwenddocs{}\nwbegincode{35}\moddef{}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+\{('a1', 'b1'): 0.63, ('a1', 'b2'): 0.27, ('a2', 'b1'): 0.02, ('a2', 'b2'): 0.08\}
+\nwendcode{}\nwbegindocs{36}\nwdocspar
+Пусть у нас есть совместное распределение случайных величин
+A, B, мы хотим построить распределение величины A при условии
+что величина B=b.
+\nwenddocs{}\nwbegincode{37}\moddef{условие на переменную}\endmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+def conditionOnVar(self, index, val):
+        res = \{\}
+        norm = 0
+        for k in self.d:
+                if k[index] == val:
+                        norm += self.prob(k)
+        for k in self.d:
+                if k[index] == val:
+                        kn = removeElt(k, index)
+                        res[kn] = self.prob(k)/norm
+        return DDist(res)       
+\nwendcode{}\nwbegindocs{38}\nwdocspar
+\nwenddocs{}\nwbegincode{39}\moddef{prob.py}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+print(PAB.conditionOnVar(1, 'b1'))
+\nwendcode{}\nwbegindocs{40}\nwdocspar
+Получили
+\nwenddocs{}\nwbegincode{41}\moddef{}\plusendmoddef\nwstartdeflinemarkup\nwenddeflinemarkup
+\{'a1': 0.9692, 'a2': 0.0307\}
+\nwendcode{}\nwbegindocs{42}\nwdocspar
+\nwenddocs{}
