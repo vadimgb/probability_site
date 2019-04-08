@@ -1,29 +1,13 @@
-from random import random 
-
-class DDist:
-        def __init__(self, dictionary):
-                '''dictionary - словарь, в нем 
-                ключи - элементарные события, 
-                значения их вероятности'''
-                self.d = dictionary
-        def prob(self, k):
-                '''вычисляет вероятность элементарного события k'''
-                if k in self.d:
-                        return self.d[k]
-                else:
-                        return 0
-        def draw(self):
-                '''генерирует псевдослучайное элементарное событие'''
-                x = random()
-                help = 0
-                for k in self.d:
-                        help += self.d[k]
-                        if help > x:
-                                return k
-        def trials(self, nTrials):
-                '''вычисляет список из nTrials псевдослучайных событий'''
-                return [self.draw() for k in range(nTrials)]
-        def __repr__(self):
-                return str(self.d)
-        
-        
+from random import choices
+res = choices([0, 1], k = 10)
+print(res)
+def flips(nFlips):
+        '''nFlips число бросаний монеты,
+        возвращает h - частоту выпадения орла.'''
+        res = choices([0, 1], k = nFlips)
+        h = sum(res)/nFlips 
+        return  h
+res = [flips(10) for k in range(8)]
+print(res)
+res = [flips(1000) for k in range(8)]
+print(res)

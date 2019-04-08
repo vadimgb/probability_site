@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ru">
 <head>
 <title>Теория вероятностей</title>
-<!--Generated on Fri Mar 29 13:36:00 2019 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Generated on Mon Apr  8 09:44:25 2019 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
@@ -51,11 +51,16 @@ print</span>(<span class="ltx_text ltx_lst_identifier">res</span>)
 </div>
 <p class="ltx_p">res будет содержать список из k нулей и единиц,
 с генерированных псевдослучайно.</p>
+<div class="ltx_listing ltx_lst_language_Python ltx_lstlisting ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,PDw+Pj0KWzEsIDAsIDEsIDEsIDEsIDAsIDEsIDAsIDEsIDBdCkA=%0A">⬇</a></div>
+<div class="ltx_listingline">&lt;&lt;&gt;&gt;=
 </div>
-<div id="S1.p2" class="ltx_para">
-<p class="ltx_p">[[1, 0, 1, 1, 1, 0, 1, 0, 1, 0]]</p>
+<div class="ltx_listingline">[1,<span class="ltx_text ltx_lst_space"> </span>0,<span class="ltx_text ltx_lst_space"> </span>1,<span class="ltx_text ltx_lst_space"> </span>1,<span class="ltx_text ltx_lst_space"> </span>1,<span class="ltx_text ltx_lst_space"> </span>0,<span class="ltx_text ltx_lst_space"> </span>1,<span class="ltx_text ltx_lst_space"> </span>0,<span class="ltx_text ltx_lst_space"> </span>1,<span class="ltx_text ltx_lst_space"> </span>0]
 </div>
-<div id="S1.p3" class="ltx_para">
+<div class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">@</span>
+</div>
+</div>
 <p class="ltx_p">Единицу будем считать выпадением орла на монете,
 а 0 - решки.</p>
 <div class="ltx_listing ltx_lst_language_Python ltx_lstlisting ltx_listing">
@@ -108,16 +113,23 @@ print</span>(<span class="ltx_text ltx_lst_identifier">res</span>)
 </div>
 </div>
 <p class="ltx_p">получили</p>
+<div class="ltx_listing ltx_lst_language_Python ltx_lstlisting ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,PDw+Pj0KWzAuNSwgMC40LCAwLjYsIDAuNSwgMC43LCAwLjMsIDAuOCwgMC42XS4KQA==%0A">⬇</a></div>
+<div class="ltx_listingline">&lt;&lt;&gt;&gt;=
 </div>
-<div id="S1.p4" class="ltx_para">
-<p class="ltx_p">[[0.5, 0.4, 0.6, 0.5, 0.7, 0.3, 0.8, 0.6]]</p>
+<div class="ltx_listingline">[0.5,<span class="ltx_text ltx_lst_space"> </span>0.4,<span class="ltx_text ltx_lst_space"> </span>0.6,<span class="ltx_text ltx_lst_space"> </span>0.5,<span class="ltx_text ltx_lst_space"> </span>0.7,<span class="ltx_text ltx_lst_space"> </span>0.3,<span class="ltx_text ltx_lst_space"> </span>0.8,<span class="ltx_text ltx_lst_space"> </span>0.6].
 </div>
-<div id="S1.p5" class="ltx_para">
+<div class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">@</span>
+</div>
+</div>
+</div>
+<div id="S1.p2" class="ltx_para">
 <p class="ltx_p">Мы видим что частота имеет сильно различающиеся значения.
 Разница между самым большим 0.8 и самым маленьким 0.3,
 равна 0.5.</p>
 </div>
-<div id="S1.p6" class="ltx_para">
+<div id="S1.p3" class="ltx_para">
 <p class="ltx_p">Будем бросать монету 1000 раз и записывать частоту.</p>
 <div class="ltx_listing ltx_lst_language_Python ltx_lstlisting ltx_listing">
 <div class="ltx_listing_data"><a href="data:text/plain;base64,PDxwcm9iLnB5Pj49CnJlcyA9IFtmbGlwcygxMDAwKSBmb3IgayBpbiByYW5nZSg4KV0KcHJpbnQo%0AcmVzKQpA%0A">⬇</a></div>
@@ -154,79 +166,136 @@ print</span>(<span class="ltx_text ltx_lst_identifier">res</span>)
 частота стремиться к некоторому пределу,
 назовём его вероятностью выпадения орла.</p>
 </div>
-<div id="S1.p7" class="ltx_para">
-<p class="ltx_p">Выпадение орла или решки называют элементарными событиями.
-При бросании кубика элементарными событием будет, например,
-выпадение 1. Все элементарные события образуют множество
-событий (мир).
-Всякое подмножество множества
-событий будем называть событием.
-Так событие выпадение чётного числа на кубике - это
-подмножество [2, 4, 6]. Если множество событий дискретное,
-то мы можем задать для каждого элементарного события его
-вероятность. Эту функцию называют дискретным распределением вероятностей.
-Множество событий с заданным на нем распределением вероятностей
-называют
-вероятностным пространством. А элементарные события можно назвать
-точками вероятностного пространства.
-Вероятностное пространство введено для формализации понятия вероятности.</p>
-</div>
-<div id="S1.p8" class="ltx_para">
-<p class="ltx_p">На событиях мы можем задать операции
-сложения(<math id="S1.p8.m1" class="ltx_Math" alttext="+,\cup" display="inline"><mrow><mo>+</mo><mo>,</mo><mo>∪</mo></mrow></math>) и умножения (<math id="S1.p8.m2" class="ltx_Math" alttext="*,\cap" display="inline"><mrow><mo>*</mo><mo>,</mo><mo>∩</mo></mrow></math>).
-<math id="S1.p8.m3" class="ltx_Math" alttext="A\cup B" display="inline"><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow></math> произошло <math id="S1.p8.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> или <math id="S1.p8.m5" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math>.
-<math id="S1.p8.m6" class="ltx_Math" alttext="A\cap B" display="inline"><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow></math> произошло <math id="S1.p8.m7" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> и <math id="S1.p8.m8" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math>.</p>
-</div>
-<div id="S1.p9" class="ltx_para">
-<p class="ltx_p">Приведём аксиомы вероятности.</p>
-<ul id="I1" class="ltx_itemize">
-<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
-<span class="ltx_tag ltx_tag_itemize">•</span> 
-<div id="I1.i1.p1" class="ltx_para">
-<p class="ltx_p">Если <math id="I1.i1.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> и <math id="I1.i1.p1.m2" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math> несовместны, т.е. <math id="I1.i1.p1.m3" class="ltx_Math" alttext="A*B=\varnothing" display="inline"><mrow><mrow><mi>A</mi><mo>*</mo><mi>B</mi></mrow><mo>=</mo><mi mathvariant="normal">∅</mi></mrow></math>
-то</p>
-<table id="S1.Ex1" class="ltx_equation ltx_eqn_table">
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Аксиомы</h2>
 
-<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="S1.Ex1.m1" class="ltx_Math" alttext="P(A+B)=P(A)+P(B)" display="block"><mrow><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>A</mi><mo>+</mo><mi>B</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>B</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-</tr>
-</table>
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">Рассмотрим аксиомы теории вероятностей, сформулированные
+Колмогоровым.</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p"><math id="S2.p2.m1" class="ltx_Math" alttext="\Omega" display="inline"><mi mathvariant="normal">Ω</mi></math> - множество элементарных событий, будем назвыать
+пространстнвом элементраных событий. <math id="S2.p2.m2" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> - множество
+всех подмножеств, его элементы будем называть случайными
+событиями.</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> - является алгебрай множеств.</p>
 </div>
 </li>
 <li id="I1.i2" class="ltx_item" style="list-style-type:none;">
-<span class="ltx_tag ltx_tag_itemize">•</span> 
+<span class="ltx_tag ltx_tag_enumerate">2.</span> 
 <div id="I1.i2.p1" class="ltx_para">
-<p class="ltx_p">Если U множество событий, то</p>
-<table id="S1.Ex2" class="ltx_equation ltx_eqn_table">
+<p class="ltx_p">Каждому множество <math id="I1.i2.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> из <math id="I1.i2.p1.m2" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> сопоставленно
+неотрицательное число <math id="I1.i2.p1.m3" class="ltx_Math" alttext="P(A)" display="inline"><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow></math>. Это число называется
+вероятностью события <math id="I1.i2.p1.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>.</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">3.</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i3.p1.m1" class="ltx_Math" alttext="P(\Omega)=1." display="inline"><mrow><mrow><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo>.</mo></mrow></math></p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate">4.</span> 
+<div id="I1.i4.p1" class="ltx_para">
+<p class="ltx_p">Если <math id="I1.i4.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> и <math id="I1.i4.p1.m2" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math> не пересекаются, то</p>
+<table id="S2.Ex1" class="ltx_equation ltx_eqn_table">
 
 <tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="S1.Ex2.m1" class="ltx_Math" alttext="P(U)=1" display="block"><mrow><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>U</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.Ex1.m1" class="ltx_Math" alttext="P(A+B)=P(A)+P(B)." display="block"><mrow><mrow><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>A</mi><mo>+</mo><mi>B</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>B</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 </tr>
 </table>
 </div>
 </li>
-<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+</ol>
+<p class="ltx_p">Совокупность объектов <math id="S2.p2.m3" class="ltx_Math" alttext="(\Omega,F,P)" display="inline"><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Ω</mi><mo>,</mo><mi>F</mi><mo>,</mo><mi>P</mi><mo stretchy="false">)</mo></mrow></math> удовлетворяющих этим
+аксиомам назовём полем вероятностей.</p>
+</div>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3 </span>Связь с опытом</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p class="ltx_p">Эксперименты со случайным исходм являются интерпритацией
+теории вероятностей.
+Так выпадение орла или решки в опыте с монетой - это элементарное событие.
+При бросании кубика элементарными событием будет, например,
+выпадение 1.
+Событие выпадение чётного числа на кубике - это
+подмножество [2, 4, 6].</p>
+</div>
+<div id="S3.p2" class="ltx_para">
+<p class="ltx_p">На событиях мы можем задать операции
+сложения(<math id="S3.p2.m1" class="ltx_Math" alttext="+,\cup" display="inline"><mrow><mo>+</mo><mo>,</mo><mo>∪</mo></mrow></math>) и умножения (<math id="S3.p2.m2" class="ltx_Math" alttext="*,\cap" display="inline"><mrow><mo>*</mo><mo>,</mo><mo>∩</mo></mrow></math>).</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_itemize">•</span> 
-<div id="I1.i3.p1" class="ltx_para">
-<table id="S1.Ex3" class="ltx_equation ltx_eqn_table">
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="A\cup B=X" display="inline"><mrow><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><mo>=</mo><mi>X</mi></mrow></math> событие <math id="I2.i1.p1.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> заключается в том, что
+произошо по крайней мере одно из событий <math id="I2.i1.p1.m3" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> или <math id="I2.i1.p1.m4" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math>.</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">Если <math id="I2.i2.p1.m1" class="ltx_Math" alttext="A\cup B=\emptyset" display="inline"><mrow><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><mo>=</mo><mi mathvariant="normal">∅</mi></mrow></math>, будем говрить что события
+несовместны.</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p">Если <math id="I2.i3.p1.m1" class="ltx_Math" alttext="A\cup B\cup C=X" display="inline"><mrow><mrow><mi>A</mi><mo>∪</mo><mi>B</mi><mo>∪</mo><mi>C</mi></mrow><mo>=</mo><mi>X</mi></mrow></math>, будем говорить
+событие <math id="I2.i3.p1.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> состоит в совместном наблюдении событий
+<math id="I2.i3.p1.m3" class="ltx_Math" alttext="A,B,C" display="inline"><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi></mrow></math>.</p>
+</div>
+</li>
+<li id="I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_itemize">•</span> 
+<div id="I2.i4.p1" class="ltx_para">
+<p class="ltx_p">Если <math id="I2.i4.p1.m1" class="ltx_Math" alttext="U=[A_{1},A_{2},...A_{n}]" display="inline"><mrow><mi>U</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><msub><mi>A</mi><mn>1</mn></msub><mo>,</mo><msub><mi>A</mi><mn>2</mn></msub><mo>,</mo><mrow><mi mathvariant="normal">…</mi><mo>⁢</mo><msub><mi>A</mi><mi>n</mi></msub></mrow><mo stretchy="false">]</mo></mrow></mrow></math>
+система не пересекающихся множеств, разлагающая
+<math id="I2.i4.p1.m2" class="ltx_Math" alttext="\Omega" display="inline"><mi mathvariant="normal">Ω</mi></math>, т.е.</p>
+<table id="S3.Ex2" class="ltx_equation ltx_eqn_table">
 
 <tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="S1.Ex3.m1" class="ltx_Math" alttext="P(\varnothing)=0" display="block"><mrow><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">∅</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S3.Ex2.m1" class="ltx_Math" alttext="A_{1}+A_{2}..+A_{n}=\Omega" display="block"><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>+</mo><msub><mi>A</mi><mn>2</mn></msub><mo>.</mo><mo>.</mo><mo>+</mo><msub><mi>A</mi><mi>n</mi></msub><mo>=</mo><mi mathvariant="normal">Ω</mi></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 </tr>
 </table>
+<p class="ltx_p">,
+то будем говорить, что испыатние <math id="I2.i4.p1.m3" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math> устанавливает
+какое из событий <math id="I2.i4.p1.m4" class="ltx_Math" alttext="A_{1},A_{2},..A_{n}" display="inline"><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>,</mo><msub><mi>A</mi><mn>2</mn></msub><mo>,</mo><mo>.</mo><mo>.</mo><msub><mi>A</mi><mi>n</mi></msub></mrow></math> произошло.</p>
 </div>
 </li>
 </ul>
 </div>
-<div id="S1.p10" class="ltx_para">
-<p class="ltx_p">Чтобы придать точность понятию дискретное вероятностное пространство,
-определим его в python, как класс DDist.</p>
+</section>
+<section id="S4" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4 </span>Класс DDist – модель полей вероятноестей.</h2>
+
+<div id="S4.p1" class="ltx_para">
+<p class="ltx_p">Простой способ задать поле вероятностей это
+выбрасть множество элменетарных сбытий и множество
+элементарных вероятностей им соответсвущих, тогда
+вероятность каждого события будет равна сумме
+элементраных вероятностей его образующих элментарных
+событий.</p>
+</div>
+<div id="S4.p2" class="ltx_para">
+<p class="ltx_p">Моделировать поля вероятностей будем при помощи
+класса DDist.</p>
 <div class="ltx_listing ltx_lst_language_Python ltx_lstlisting ltx_listing">
 <div class="ltx_listing_data"><a href="data:text/plain;base64,PDxkZGlzdC5weT4+PQpmcm9tIHJhbmRvbSBpbXBvcnQgcmFuZG9tCjw80LLRgdC/0L7QvNC+0LPQ%0AsNGC0LXQu9GM0L3Ri9C1INGE0YPQvdC60YbQuNC4Pj4KY2xhc3MgRERpc3Q6CglkZWYgX19pbml0%0AX18oc2VsZiwgZGljdGlvbmFyeSk6CgkJJycnZGljdGlvbmFyeSAtINGB0LvQvtCy0LDRgNGMLCDQ%0AsiDQvdC10LwKCQnQutC70Y7Rh9C4IC0g0Y3Qu9C10LzQtdC90YLQsNGA0L3Ri9C1INGB0L7QsdGL%0A0YLQuNGPLAoJCdC30L3QsNGH0LXQvdC40Y8g0LjRhSDQstC10YDQvtGP0YLQvdC+0YHRgtC4Jycn%0ACgkJc2VsZi5kID0gZGljdGlvbmFyeQoJZGVmIHByb2Ioc2VsZiwgayk6CgkJJycn0LLRi9GH0LjR%0AgdC70Y/QtdGCINCy0LXRgNC+0Y/RgtC90L7RgdGC0Ywg0Y3Qu9C10LzQtdC90YLQsNGA0L3QvtCz%0A0L4g0YHQvtCx0YvRgtC40Y8gaycnJwoJCWlmIGsgaW4gc2VsZi5kOgoJCQlyZXR1cm4gc2VsZi5k%0AW2tdCgkJZWxzZToKCQkJcmV0dXJuIDAKCWRlZiBkcmF3KHNlbGYpOgoJCScnJ9Cz0LXQvdC10YDQ%0AuNGA0YPQtdGCINC/0YHQtdCy0LTQvtGB0LvRg9GH0LDQudC90L7QtSDRjdC70LXQvNC10L3RgtCw%0A0YDQvdC+0LUg0YHQvtCx0YvRgtC40LUnJycKCQl4ID0gcmFuZG9tKCkKCQloZWxwID0gMAoJCWZv%0AciBrIGluIHNlbGYuZDoKCQkJaGVscCArPSBzZWxmLmRba10KCQkJaWYgaGVscCA+IHg6CgkJCQly%0AZXR1cm4gawoJZGVmIHRyaWFscyhzZWxmLCBuVHJpYWxzKToKCQknJyfQstGL0YfQuNGB0LvRj9C1%0A0YIg0YHQv9C40YHQvtC6INC40LcgblRyaWFscyDQv9GB0LXQstC00L7RgdC70YPRh9Cw0LnQvdGL%0A0YUg0YHQvtCx0YvRgtC40LknJycKCQlyZXR1cm4gW3NlbGYuZHJhdygpIGZvciBrIGluIHJhbmdl%0AKG5UcmlhbHMpXQoJZGVmIF9fcmVwcl9fKHNlbGYpOgoJCXJldHVybiBzdHIoc2VsZi5kKQoJPDzQ%0AvNCw0YDQs9C40L3QsNC70YzQvdC+0LUg0YDQsNGB0L/RgNC10LTQtdC70LXQvdC40LU+PgoJPDzR%0Ag9GB0LvQvtCy0LjQtSDQvdCwINC/0LXRgNC10LzQtdC90L3Rg9GOPj4KQA==%0A">⬇</a></div>
 <div class="ltx_listingline">&lt;&lt;<span class="ltx_text ltx_lst_identifier">ddist</span>.<span class="ltx_text ltx_lst_identifier">py</span>&gt;&gt;=
@@ -348,17 +417,149 @@ str</span>(<span class="ltx_text ltx_lst_identifier">self</span>.<span class="lt
 </div>
 </div>
 </div>
+</section>
+<section id="S5" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5 </span>Условная вероятность</h2>
+
+<div id="S5.p1" class="ltx_para">
+<p class="ltx_p">Если <math id="S5.p1.m1" class="ltx_Math" alttext="P(a)&gt;0" display="inline"><mrow><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math>, то</p>
+<table id="S5.E1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S5.E1.m1" class="ltx_Math" alttext="P(B\mid A)=\frac{P(AB)}{P(A)}" display="block"><mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>B</mi><mo>∣</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>A</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr>
+</table>
+<p class="ltx_p">назовём условной вероятностью события <math id="S5.p1.m2" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math> при условии
+<math id="S5.p1.m3" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>. Из (<a href="#S5.E1" title="(1) ‣ 5 Условная вероятность ‣ Теория вероятностей" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>) следует, что</p>
+<table id="S5.E2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S5.E2.m1" class="ltx_Math" alttext="P(AB)=P(A)P(B\mid A)." display="block"><mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>A</mi><mi>B</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>B</mi><mo>∣</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr>
+</table>
+<p class="ltx_p">Можно проверить, что при фиксированном событии <math id="S5.p1.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>,
+условные вероятности событий при условии <math id="S5.p1.m5" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> удовлетовряют
+аксиомам поля вероятностей.</p>
+<table id="S5.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S5.Ex3.m1" class="ltx_Math" alttext="P(C+B\mid A)=P(C\mid A)+P(B\mid A)" display="block"><mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>C</mi><mo>+</mo><mi>B</mi><mo>∣</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>C</mi><mo>∣</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>B</mi><mo>∣</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<table id="S5.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S5.Ex4.m1" class="ltx_Math" alttext="P(B\mid A)\geq 0" display="block"><mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>B</mi><mo>∣</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><mo>≥</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<table id="S5.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S5.Ex5.m1" class="ltx_Math" alttext="P(\Omega\mid A)=1" display="block"><mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Ω</mi><mo>∣</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Т.е. услвоная вероятнось
+задаёт новое поле вероятностей.</p>
+</div>
+<div id="S5.p2" class="ltx_para">
+<p class="ltx_p">Из (<a href="#S5.E2" title="(2) ‣ 5 Условная вероятность ‣ Теория вероятностей" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a>) и аналогичной формулы</p>
+<table id="S5.E3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S5.E3.m1" class="ltx_Math" alttext="P(AB)=P(B)P(A\mid B)" display="block"><mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>A</mi><mi>B</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>B</mi><mo stretchy="false">)</mo></mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>A</mi><mo>∣</mo><mi>B</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3)</span></td>
+</tr>
+</table>
+<p class="ltx_p">следует, получаем</p>
+<table id="S5.E4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S5.E4.m1" class="ltx_Math" alttext="P(A\mid B)=\frac{P(A)P(B\mid A)}{P(B)}." display="block"><mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>A</mi><mo>∣</mo><mi>B</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>B</mi><mo>∣</mo><mi>A</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>B</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4)</span></td>
+</tr>
+</table>
+</div>
+<div id="Thmtheorem1" class="ltx_theorem ltx_theorem_theorem">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem"><span class="ltx_tag ltx_tag_theorem">Теорема 1</span></h6>
+<div id="Thmtheorem1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">(о полной вероятности).
+Пусть <math id="Thmtheorem1.p1.m1" class="ltx_Math" alttext="A_{1}+A_{2}+A_{3}..+A_{n}=\Omega" display="inline"><mrow><msub><mi>A</mi><mn mathvariant="normal">1</mn></msub><mo mathvariant="normal">+</mo><msub><mi>A</mi><mn mathvariant="normal">2</mn></msub><mo mathvariant="normal">+</mo><msub><mi>A</mi><mn mathvariant="normal">3</mn></msub><mo mathvariant="normal">.</mo><mo mathvariant="normal">.</mo><mo mathvariant="normal">+</mo><msub><mi>A</mi><mi>n</mi></msub><mo mathvariant="normal">=</mo><mi mathvariant="normal">Ω</mi></mrow></math> и B произвольное событие.
+Тогда</span></p>
+<table id="S5.E5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S5.E5.m1" class="ltx_Math" alttext="P(B)=P(A_{1})P(B\mid A_{1})+P(A_{2})P(B\mid A_{2})+...+P(A_{n})P(B\mid A_{n})." display="block"><mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>B</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo stretchy="false">(</mo><msub><mi>A</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>B</mi><mo>∣</mo><msub><mi>A</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo stretchy="false">(</mo><msub><mi>A</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>B</mi><mo>∣</mo><msub><mi>A</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><mo>+</mo><mi mathvariant="normal">…</mi><mo>+</mo><mi>P</mi><mrow><mo stretchy="false">(</mo><msub><mi>A</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>B</mi><mo>∣</mo><msub><mi>A</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5)</span></td>
+</tr>
+</table>
+</div>
+</div>
+<div id="Thmproofx1" class="ltx_theorem ltx_theorem_proof">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem"><span class="ltx_tag ltx_tag_theorem">Доказательство</span></h6>
+<div id="Thmproofx1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Поскольку</span></p>
+<table id="S5.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S5.Ex6.m1" class="ltx_Math" alttext="B=BA_{1}+BA_{2}+...+BA_{n}," display="block"><mrow><mrow><mi>B</mi><mo>=</mo><mrow><mrow><mi>B</mi><mo>⁢</mo><msub><mi>A</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><mi>B</mi><mo>⁢</mo><msub><mi>A</mi><mn>2</mn></msub></mrow><mo>+</mo><mi mathvariant="normal">…</mi><mo>+</mo><mrow><mi>B</mi><mo>⁢</mo><msub><mi>A</mi><mi>n</mi></msub></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">то, согласно 4 аксиоме, получаем</span></p>
+<table id="S5.Ex7" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S5.Ex7.m1" class="ltx_Math" alttext="P(B)=P(BA_{1})+P(BA_{2})+...+P(PA_{n})." display="block"><mrow><mrow><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>B</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>B</mi><mo>⁢</mo><msub><mi>A</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>B</mi><mo>⁢</mo><msub><mi>A</mi><mn>2</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mi mathvariant="normal">…</mi><mo>+</mo><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>P</mi><mo>⁢</mo><msub><mi>A</mi><mi>n</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Согласно (<a href="#S5.E2" title="(2) ‣ 5 Условная вероятность ‣ Теория вероятностей" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a>) при этом имеем равенство</span></p>
+<table id="S5.Ex8" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S5.Ex8.m1" class="ltx_Math" alttext="P(BA_{i})=P(A_{i})P(B\mid A_{i})" display="block"><mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>B</mi><msub><mi>A</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo stretchy="false">(</mo><msub><mi>A</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><mi>B</mi><mo>∣</mo><msub><mi>A</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+</div>
 <div class="ltx_TOC ltx_role_contents">
 <h6>Содержание:</h6>
 <ul class="ltx_toclist">
 <li class="ltx_tocentry ltx_tocentry_section"><a href="#S1" title="1 Дискретное распределение ‣ Теория вероятностей" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Дискретное распределение</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S2" title="2 Аксиомы ‣ Теория вероятностей" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Аксиомы</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S3" title="3 Связь с опытом ‣ Теория вероятностей" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Связь с опытом</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S4" title="4 Класс DDist – модель полей вероятноестей. ‣ Теория вероятностей" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Класс DDist – модель полей вероятноестей.</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S5" title="5 Условная вероятность ‣ Теория вероятностей" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Условная вероятность</span></a></li>
 </ul>
 </div>
 </section>
 </article>
 </div>
 <footer class="ltx_page_footer">
-<div class="ltx_page_logo">Generated  on Fri Mar 29 13:36:00 2019 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+<div class="ltx_page_logo">Generated  on Mon Apr  8 09:44:25 2019 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
 </div></footer>
 </div>
 </body>
