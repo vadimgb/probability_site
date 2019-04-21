@@ -115,7 +115,7 @@ $A,B,C$.
 система не пересекающихся множеств, разлагающая
 $\Omega$, т.е.
 $$A_1 + A_2 .. +A_n = \Omega$$,
-то будем говорить, что испыатние $U$ устанавливает
+то будем говорить, что испытание $U$ устанавливает
 какое из событий $A_1, A_2, .. A_n$ произошло.
 \end{itemize}
 
@@ -192,14 +192,14 @@ $$
 P(AB)=P(B)P(A\mid B)
 \end{equation}
 следует, получаем 
-\begin{equation}
+\begin{equation}\label{bayesH}
 P(A\mid B) = \frac{P(A)P(B\mid A)}{P(B)}.
 \end{equation}
 
 \begin{theorem}(о полной вероятности).
 Пусть $A_1+A_2+A_3..+A_n=\Omega$\  и B произвольное событие.
 Тогда
-\begin{equation}
+\begin{equation}\label{total}
 P(B) = P(A_1)P(B\mid A_1) + P(A_2)P(B\mid A_2) +... + P(A_n)P(B\mid A_n).
 \end{equation} 
 \end{theorem}
@@ -217,3 +217,65 @@ $$
 P(BA_i) = P(A_i)P(B\mid A_i)
 $$
 \end{proof}
+\begin{theorem}
+(Байеса).
+Пусть $A_1+A_2+...+A_n=\Omega$\  и $B$ \ произвольное 
+событие. Тогда
+\begin{equation}\label{bayes}
+P(A_i \mid B) = \frac{P(A_i) P(B \mid A_i)}{P(A_1)P(B \mid A_1) + P(A_2)P(B \mid A_2) + .. +P(A_n) P(B\mid A_n)}.
+\end{equation}
+\begin{proof}
+В формулу (\ref{bayesH}), подставивим  (\ref{total})
+\end{proof}
+
+События $A_1, A_2,..A_n$ часто называют гипотезами, и 
+говрят, что формула (\ref{bayes}) вероятность $P(A_i \mid b)$\ 
+гипотезы $A_i$ \ после наступлении собыитя $B$. $P(A_i)$ \ даёт
+априорную вероятность.
+ 
+\section{Независимость}
+Пусть $V=(A_1, A_2, ...A_n)$ испытание, 
+$W=(B_1, B_2, ..,B_m)$ другое испытание,
+то эти испытания будем незавть независимыми, 
+если для любого $i, j$ 
+имеет место равенство
+$$
+P(A_i B_j) = P(A_i) P(B_j).
+$$
+\section{Случайная величина}
+Пусть $U$ испытание, разлогающее основнове множество $\Omega$,
+$$
+A_1+A_2+..A_n=\Omega,
+$$
+$X = X(\omega)$ действительная функция элементарного
+события $\omega$, которая на каждом множестве $A_i$,
+принимает значение $x_i$, будем её называть случайной величиной.
+\begin{equation}
+E(X)=\sum_i^n x_i P(A_i)=\sum X(w_i)P(w_i)
+\end{equation}
+будем называть математическим ожиданием.
+
+Свойства матматического ожидания
+\begin{equation}\label{constE}
+E(cX)=cE(x)
+\end{equation}
+\begin{equation}
+E(X + Y) = E(X) + E(Y)
+\end{equation}
+Если $X, Y$ независимые случайные величины, то
+\begin{equation}
+E(XY)=E(X)E(Y)
+\end{equation}
+Докажим свойство (\ref{constE})
+$$
+E(cX)=\sum cx_iP(A_i)=c\sum cx_iP(A_i)=cE(X).
+$$
+Докажем оставшиеся свойства
+$$
+E(X+Y)=\sum (X(w_i)+Y(w_i)) P(w_i)=\sum X(w_i)P(w_i) + \sum Y(w_i)P(w_i)=E(X)+E(Y)
+$$
+$$
+E(XY)=\sum x_jy_iP(X=x_j and Y=y_i)=\sum x_j y_iP(X=x_j)P(Y=y_i)=\sum x_jP(X=x_j) \sum y_i P(Y=y_i) = E(X)E(Y)
+$$
+
+
