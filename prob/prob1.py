@@ -96,7 +96,7 @@ def makeProbField(name, omega):
          __init__ = __init__, prob=prob, __add__=__add__, __mul__=__mul__, 
         __sub__=__sub__, __str__=__str__))
 from fractions import Fraction
-p = Fraction('1/6')
+p = Fraction(1, 6)
 pCube = DDist({1:p, 2:p, 3:p, 4:p, 5:p, 6:p})
 Cube = makeProbField('Cube', pCube)
 a = Cube(lambda x: x % 2 == 0)

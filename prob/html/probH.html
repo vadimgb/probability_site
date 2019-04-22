@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ru">
 <head>
 <title>python и теория вероятностей</title>
-<!--Generated on Mon Apr 22 20:24:49 2019 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Generated on Mon Apr 22 20:27:07 2019 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
@@ -481,7 +481,7 @@ dict</span>(<span class="ltx_text ltx_lst_identifier">omega</span>=<span class="
 </div>
 <p class="ltx_p">Рассмотрим пример с правильным кубиком.</p>
 <div class="ltx_listing ltx_lst_language_Python ltx_lstlisting ltx_listing">
-<div class="ltx_listing_data"><a href="data:text/plain;base64,PDxwcm9iMS5weT4+PQpmcm9tIGZyYWN0aW9ucyBpbXBvcnQgRnJhY3Rpb24KcCA9IEZyYWN0aW9u%0AKCcxLzYnKQpwQ3ViZSA9IEREaXN0KHsxOnAsIDI6cCwgMzpwLCA0OnAsIDU6cCwgNjpwfSkKQ3Vi%0AZSA9IG1ha2VQcm9iRmllbGQoJ0N1YmUnLCBwQ3ViZSkKYSA9IEN1YmUobGFtYmRhIHg6IHggJSAy%0AID09IDApCmIgPSBDdWJlKGxhbWJkYSB4OiB4ID4gMykKZCA9IGEgKyBiCnByaW50KGYne2F9IHBy%0Ab2I9e2EucHJvYn0nKQpwcmludChmJ3tifSBwcm9iPSB7Yi5wcm9ifScpCnByaW50KGYne2R9IHBy%0Ab2IgPSB7ZC5wcm9ifScpCkA=%0A">⬇</a></div>
+<div class="ltx_listing_data"><a href="data:text/plain;base64,PDxwcm9iMS5weT4+PQpmcm9tIGZyYWN0aW9ucyBpbXBvcnQgRnJhY3Rpb24KcCA9IEZyYWN0aW9u%0AKDEsIDYpCnBDdWJlID0gRERpc3QoezE6cCwgMjpwLCAzOnAsIDQ6cCwgNTpwLCA2OnB9KQpDdWJl%0AID0gbWFrZVByb2JGaWVsZCgnQ3ViZScsIHBDdWJlKQphID0gQ3ViZShsYW1iZGEgeDogeCAlIDIg%0APT0gMCkKYiA9IEN1YmUobGFtYmRhIHg6IHggPiAzKQpkID0gYSArIGIKcHJpbnQoZid7YX0gcHJv%0AYj17YS5wcm9ifScpCnByaW50KGYne2J9IHByb2I9IHtiLnByb2J9JykKcHJpbnQoZid7ZH0gcHJv%0AYiA9IHtkLnByb2J9JykKQA==%0A">⬇</a></div>
 <div class="ltx_listingline">&lt;&lt;<span class="ltx_text ltx_lst_identifier">prob1</span>.<span class="ltx_text ltx_lst_identifier">py</span>&gt;&gt;=
 </div>
 <div class="ltx_listingline">
@@ -490,7 +490,7 @@ from</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text l
 import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Fraction</span>
 </div>
 <div class="ltx_listingline">
-<span class="ltx_text ltx_lst_identifier">p</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Fraction</span>(<span class="ltx_text ltx_lst_string">/6’</span>)
+<span class="ltx_text ltx_lst_identifier">p</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Fraction</span>(1,<span class="ltx_text ltx_lst_space"> </span>6)
 </div>
 <div class="ltx_listingline">
 <span class="ltx_text ltx_lst_identifier">pCube</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">DDist</span>({1:<span class="ltx_text ltx_lst_identifier">p</span>,<span class="ltx_text ltx_lst_space"> </span>2:<span class="ltx_text ltx_lst_identifier">p</span>,<span class="ltx_text ltx_lst_space"> </span>3:<span class="ltx_text ltx_lst_identifier">p</span>,<span class="ltx_text ltx_lst_space"> </span>4:<span class="ltx_text ltx_lst_identifier">p</span>,<span class="ltx_text ltx_lst_space"> </span>5:<span class="ltx_text ltx_lst_identifier">p</span>,<span class="ltx_text ltx_lst_space"> </span>6:<span class="ltx_text ltx_lst_identifier">p</span>})
@@ -545,7 +545,7 @@ print</span>(<span class="ltx_text ltx_lst_identifier">f</span><span class="ltx_
 </article>
 </div>
 <footer class="ltx_page_footer">
-<div class="ltx_page_logo">Generated  on Mon Apr 22 20:24:49 2019 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+<div class="ltx_page_logo">Generated  on Mon Apr 22 20:27:07 2019 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
 </div></footer>
 </div>
 </body>
