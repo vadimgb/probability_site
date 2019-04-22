@@ -232,7 +232,7 @@ $$
 E(X+Y)=\sum (X(w_i)+Y(w_i)) P(w_i)=\sum X(w_i)P(w_i) + \sum Y(w_i)P(w_i)=E(X)+E(Y)
 $$
 $$
-E(XY)=\sum x_jy_iP(X=x_j and Y=y_i)=\sum x_j y_iP(X=x_j)P(Y=y_i)=\sum x_jP(X=x_j) \sum y_i P(Y=y_i) = E(X)E(Y)
+E(XY)=\sum x_{j}y_{i}P(X=x_{j} and Y=y_{i})=\sum x_{j} y_{i}P(X=x_{j})P(Y=y_{i})=\sum x_{j}P(X=x_{j}) \sum y_i P(Y=y_i) = E(X)E(Y)
 $$
 
 

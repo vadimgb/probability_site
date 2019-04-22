@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ru">
 <head>
 <title>python и теория вероятностей</title>
-<!--Generated on Mon Apr 22 09:18:14 2019 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Generated on Mon Apr 22 20:24:49 2019 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
@@ -162,11 +162,11 @@ return</span><span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_tex
 </div>
 <p class="ltx_p">Приведём пример</p>
 <div class="ltx_listing ltx_lst_language_Python ltx_lstlisting ltx_listing">
-<div class="ltx_listing_data"><a href="data:text/plain;base64,PDxwcm9iMS5weT4+PQpQQSA9IEREaXN0KHsiYTEiOjAuOSwgImEyIjowLjF9KQpkZWYgUEJnQShh%0AKToKCWlmIGEgPT0gImExIjoKCQlyZXR1cm4gRERpc3QoeyJiMSI6MC43LCAiYjIiOjAuM30pCgll%0AbHNlOgoJCXJldHVybiBERGlzdCh7ImIxIjowLjIsICJiMiI6MC44fSkKClBBQiA9IEpEaXN0KFBB%0ALCBQQmdBKQpwcmludChQQUIpCkA=%0A">⬇</a></div>
+<div class="ltx_listing_data"><a href="data:text/plain;base64,PDxwcm9iMS5weT4+PQpQQSA9IEREaXN0KHsnYTEnOjAuOSwgJ2EyJzowLjF9KQpkZWYgUEJnQShh%0AKToKCWlmIGEgPT0gJ2ExJzoKCQlyZXR1cm4gRERpc3QoeydiMSc6MC43LCAnYjInOjAuM30pCgll%0AbHNlOgoJCXJldHVybiBERGlzdCh7J2IxJzowLjIsICdiMic6MC44fSkKClBBQiA9IEpEaXN0KFBB%0ALCBQQmdBKQpwcmludChQQUIpCkA=%0A">⬇</a></div>
 <div class="ltx_listingline">&lt;&lt;<span class="ltx_text ltx_lst_identifier">prob1</span>.<span class="ltx_text ltx_lst_identifier">py</span>&gt;&gt;=
 </div>
 <div class="ltx_listingline">
-<span class="ltx_text ltx_lst_identifier">PA</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">DDist</span>({<span class="ltx_text ltx_lst_string">"a1"missing</span>:0.9,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">"a2"missing</span>:0.1})
+<span class="ltx_text ltx_lst_identifier">PA</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">DDist</span>({<span class="ltx_text ltx_lst_string">’a1’</span>:0.9,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">’a2’</span>:0.1})
 </div>
 <div class="ltx_listingline">
 <span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
@@ -174,11 +174,11 @@ def</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text lt
 </div>
 <div class="ltx_listingline">
 <span class="ltx_text ltx_lst_space">        </span><span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
-if</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">a</span><span class="ltx_text ltx_lst_space"> </span>==<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">"a1"missing</span>:
+if</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">a</span><span class="ltx_text ltx_lst_space"> </span>==<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">’a1’</span>:
 </div>
 <div class="ltx_listingline">
 <span class="ltx_text ltx_lst_space">                </span><span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
-return</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">DDist</span>({<span class="ltx_text ltx_lst_string">"b1"missing</span>:0.7,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">"b2"missing</span>:0.3})
+return</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">DDist</span>({<span class="ltx_text ltx_lst_string">’b1’</span>:0.7,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">’b2’</span>:0.3})
 </div>
 <div class="ltx_listingline">
 <span class="ltx_text ltx_lst_space">        </span><span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
@@ -186,7 +186,7 @@ else</span>:
 </div>
 <div class="ltx_listingline">
 <span class="ltx_text ltx_lst_space">                </span><span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
-return</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">DDist</span>({<span class="ltx_text ltx_lst_string">"b1"missing</span>:0.2,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">"b2"missing</span>:0.8})
+return</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">DDist</span>({<span class="ltx_text ltx_lst_string">’b1’</span>:0.2,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">’b2’</span>:0.8})
 </div>
 <div class="ltx_listingline">
 </div>
@@ -250,11 +250,11 @@ return</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text
 </div>
 <div id="S1.SS3.p2" class="ltx_para">
 <div class="ltx_listing ltx_lst_language_Python ltx_lstlisting ltx_listing">
-<div class="ltx_listing_data"><a href="data:text/plain;base64,PDxwcm9iMS5weT4+PQpQQUIgPSBERGlzdCh7KCJIIiwgIkgiKToxLzQsICgiSCIsICJUIik6MS80%0ALCAoIlQiLCAiSCIpOjEvNCwgKCJUIiwgIlQiKToxLzR9KQpQQSA9IFBBQi5tYXJnaW5hbGl6ZU91%0AdCgxKQpwcmludChQQSkKQA==%0A">⬇</a></div>
+<div class="ltx_listing_data"><a href="data:text/plain;base64,PDxwcm9iMS5weT4+PQpQQUIgPSBERGlzdCh7KCdIJywgJ0gnKToxLzQsICgnSCcsICdUJyk6MS80%0ALCAoJ1QnLCAnSCcpOjEvNCwgKCdUJywgJ1QnKToxLzR9KQpQQSA9IFBBQi5tYXJnaW5hbGl6ZU91%0AdCgxKQpwcmludChQQSkKQA==%0A">⬇</a></div>
 <div class="ltx_listingline">&lt;&lt;<span class="ltx_text ltx_lst_identifier">prob1</span>.<span class="ltx_text ltx_lst_identifier">py</span>&gt;&gt;=
 </div>
 <div class="ltx_listingline">
-<span class="ltx_text ltx_lst_identifier">PAB</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">DDist</span>({(<span class="ltx_text ltx_lst_string">"H"missing</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">"H"missing</span>):1/4,<span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_string">"H"missing</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">"T"missing</span>):1/4,<span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_string">"T"missing</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">"H"missing</span>):1/4,<span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_string">"T"missing</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">"T"missing</span>):1/4})
+<span class="ltx_text ltx_lst_identifier">PAB</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">DDist</span>({(<span class="ltx_text ltx_lst_string">’H’</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">’H’</span>):1/4,<span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_string">’H’</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">’T’</span>):1/4,<span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_string">’T’</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">’H’</span>):1/4,<span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_string">’T’</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string">’T’</span>):1/4})
 </div>
 <div class="ltx_listingline">
 <span class="ltx_text ltx_lst_identifier">PA</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">PAB</span>.<span class="ltx_text ltx_lst_identifier">marginalizeOut</span>(1)
@@ -346,7 +346,7 @@ else</span>:
 Пространство элементарных событий и их вероятности
 полностью определяют класс событий.</p>
 <div class="ltx_listing ltx_lst_language_Python ltx_lstlisting ltx_listing">
-<div class="ltx_listing_data"><a href="data:text/plain;base64,PDxwcm9iMS5weT4+PQpkZWYgbWFrZVByb2JGaWVsZChuYW1lLCBvbWVnYSk6CgknJydvbWVnYSDQ%0AvtCx0YrQtdC60YIg0LrQu9Cw0YHRgdCwIEREaXN0LAoJINGE0YPQvdC60YbQuNGPINCy0L7Qt9Cy%0A0YDQsNGJ0LDQtdGCINC60LvQsNGB0YEg0YHQvtCx0YvRgtC40LUKCdGBINC40LzQtdC90LXQvCBu%0AYW1lJycnCglkZWYgX19pbml0X18oc2VsZiwgcHJlZCk6CgkJJycncHJlZCDQv9GA0LXQtNC40LrQ%0AsNGCINCy0YvQsdC40YDQsNGO0YnQuNC5INGN0LvQtdC80LXQvdGC0LDRgNC90YvQtQoJCdGB0L7Q%0AsdGL0YLQuNGPINGD0LTQvtCy0LvQtdGC0LLQvtGA0Y/RjtGJ0LjQtSDRg9GB0LvQvtCy0LjRjiwK%0ACQnQt9Cw0LTQsNGR0YIg0YHQvtCx0YvRgtC40LUnJycKCQlzZWxmLnNhbXBsZXMgPSB7ayBmb3Ig%0AayBpbiBzZWxmLm9tZWdhIGlmIHByZWQoayl9CgoJQHByb3BlcnR5CglkZWYgcHJvYihzZWxmKToK%0ACQknJyfRgdCy0L7QudGB0YLQstC+IC0g0LLQtdGA0L7Rj9GC0L3QvtGB0YLRjCDRgdC+0LHRi9C4%0A0YLRjycnJwoJCXJldHVybiBzdW0oW3NlbGYub21lZ2Fba10gZm9yIGsgaW4gc2VsZi5zYW1wbGVz%0AXSkKCglkZWYgX19hZGRfXyhzZWxmLCBvdmVyKToKCQknJyfQt9Cw0LTQsNGR0YIg0YHRg9C80LzR%0AgyDRgdC+0LHRi9GC0LjQuScnJwoJCWYgPSBsYW1iZGEgeDogKHggaW4gc2VsZi5zYW1wbGVzIG9y%0AIHggaW4gb3Zlci5zYW1wbGVzKQoJCXJldHVybiBtYWtlUHJvYkZpZWxkKG5hbWUsIG9tZWdhKShm%0AKQoKCWRlZiBfX211bF9fKHNlbGYsIG92ZXIpOgoJCWYgPSBsYW1iZGEgeDogKHggaW4gc2VsZi5z%0AYW1wbGVzIGFuZCB4IGluIG92ZXIuc2FtcGxlcykKCQlyZXR1cm4gbWFrZVByb2JGaWVsZChuYW1l%0ALCBvbWVnYSkoZikKCglkZWYgX19zdWJfXyhzZWxmLCBvdmVyKToKCQlmID0gbGFtYmRhIHg6IHgg%0AaW4gc2VsZi5zYW1wbGVzIGFuZCBub3QgeCBpbiBvdmVyLnNhbXBsZXMKCQlyZXR1cm4gbWFrZVBy%0Ab2JGaWVsZChuYW1lLCBvbWVnYSkoZikKCWRlZiBfX3N0cl9fKHNlbGYpOgoJCXJldHVybiBzdHIo%0Ac2VsZi5fX2NsYXNzX18uX19uYW1lX18pICsgc3RyKHNlbGYuc2FtcGxlcykKCglyZXR1cm4gdHlw%0AZShuYW1lLCAob2JqZWN0LCksIGRpY3Qob21lZ2E9b21lZ2EsCgkgX19pbml0X18gPSBfX2luaXRf%0AXywgcHJvYj1wcm9iLCBfX2FkZF9fPV9fYWRkX18sIF9fbXVsX189X19tdWxfXywKCV9fc3ViX189%0AX19zdWJfXywgX19zdHJfXz1fX3N0cl9fKSkKQApcZW5ke2xzdGxpc2luZ30K0KDQsNGB0YHQvNC+%0A0YLRgNC40Lwg0L/RgNC40LzQtdGAINGBINC/0YDQsNCy0LjQu9GM0L3Ri9C8INC60YPQsdC40LrQ%0AvtC8LgpcYmVnaW57bHN0bGlzdGluZ31bbGFuZ3VhZ2U9UHl0aG9uXQo8PHByb2IxLnB5Pj49CmZy%0Ab20gZnJhY3Rpb25zIGltcG9ydCBGcmFjdGlvbgpwID0gRnJhY3Rpb24oJzEvNicpCnBDdWJlID0g%0ARERpc3QoezE6cCwgMjpwLCAzOnAsIDQ6cCwgNTpwLCA2OnB9KQpDdWJlID0gbWFrZVByb2JGaWVs%0AZCgiQ3ViZSIsIHBDdWJlKQphID0gQ3ViZShsYW1iZGEgeDogeCAlIDIgPT0gMCkKYiA9IEN1YmUo%0AbGFtYmRhIHg6IHggPiAzKQpkID0gYSArIGIKcHJpbnQoZiJ7YX0gcHJvYj17YS5wcm9ifSIpCnBy%0AaW50KGYie2J9IHByb2I9IHtiLnByb2J9IikKcHJpbnQoZiJ7ZH0gcHJvYiA9IHtkLnByb2J9IikK%0AQA==%0A">⬇</a></div>
+<div class="ltx_listing_data"><a href="data:text/plain;base64,PDxwcm9iMS5weT4+PQpkZWYgbWFrZVByb2JGaWVsZChuYW1lLCBvbWVnYSk6CgknJydvbWVnYSDQ%0AvtCx0YrQtdC60YIg0LrQu9Cw0YHRgdCwIEREaXN0LAoJINGE0YPQvdC60YbQuNGPINCy0L7Qt9Cy%0A0YDQsNGJ0LDQtdGCINC60LvQsNGB0YEg0YHQvtCx0YvRgtC40LUKCdGBINC40LzQtdC90LXQvCBu%0AYW1lJycnCglkZWYgX19pbml0X18oc2VsZiwgcHJlZCk6CgkJJycncHJlZCDQv9GA0LXQtNC40LrQ%0AsNGCINCy0YvQsdC40YDQsNGO0YnQuNC5INGN0LvQtdC80LXQvdGC0LDRgNC90YvQtQoJCdGB0L7Q%0AsdGL0YLQuNGPINGD0LTQvtCy0LvQtdGC0LLQvtGA0Y/RjtGJ0LjQtSDRg9GB0LvQvtCy0LjRjiwK%0ACQnQt9Cw0LTQsNGR0YIg0YHQvtCx0YvRgtC40LUnJycKCQlzZWxmLnNhbXBsZXMgPSB7ayBmb3Ig%0AayBpbiBzZWxmLm9tZWdhIGlmIHByZWQoayl9CgoJQHByb3BlcnR5CglkZWYgcHJvYihzZWxmKToK%0ACQknJyfRgdCy0L7QudGB0YLQstC+IC0g0LLQtdGA0L7Rj9GC0L3QvtGB0YLRjCDRgdC+0LHRi9C4%0A0YLRjycnJwoJCXJldHVybiBzdW0oW3NlbGYub21lZ2Fba10gZm9yIGsgaW4gc2VsZi5zYW1wbGVz%0AXSkKCglkZWYgX19hZGRfXyhzZWxmLCBvdmVyKToKCQknJyfQt9Cw0LTQsNGR0YIg0YHRg9C80LzR%0AgyDRgdC+0LHRi9GC0LjQuScnJwoJCWYgPSBsYW1iZGEgeDogKHggaW4gc2VsZi5zYW1wbGVzIG9y%0AIHggaW4gb3Zlci5zYW1wbGVzKQoJCXJldHVybiBtYWtlUHJvYkZpZWxkKG5hbWUsIG9tZWdhKShm%0AKQoKCWRlZiBfX211bF9fKHNlbGYsIG92ZXIpOgoJCWYgPSBsYW1iZGEgeDogKHggaW4gc2VsZi5z%0AYW1wbGVzIGFuZCB4IGluIG92ZXIuc2FtcGxlcykKCQlyZXR1cm4gbWFrZVByb2JGaWVsZChuYW1l%0ALCBvbWVnYSkoZikKCglkZWYgX19zdWJfXyhzZWxmLCBvdmVyKToKCQlmID0gbGFtYmRhIHg6IHgg%0AaW4gc2VsZi5zYW1wbGVzIGFuZCBub3QgeCBpbiBvdmVyLnNhbXBsZXMKCQlyZXR1cm4gbWFrZVBy%0Ab2JGaWVsZChuYW1lLCBvbWVnYSkoZikKCWRlZiBfX3N0cl9fKHNlbGYpOgoJCXJldHVybiBzdHIo%0Ac2VsZi5fX2NsYXNzX18uX19uYW1lX18pICsgc3RyKHNlbGYuc2FtcGxlcykKCglyZXR1cm4gdHlw%0AZShuYW1lLCAob2JqZWN0LCksIGRpY3Qob21lZ2E9b21lZ2EsCgkgX19pbml0X18gPSBfX2luaXRf%0AXywgcHJvYj1wcm9iLCBfX2FkZF9fPV9fYWRkX18sIF9fbXVsX189X19tdWxfXywKCV9fc3ViX189%0AX19zdWJfXywgX19zdHJfXz1fX3N0cl9fKSkKQA==%0A">⬇</a></div>
 <div class="ltx_listingline">&lt;&lt;<span class="ltx_text ltx_lst_identifier">prob1</span>.<span class="ltx_text ltx_lst_identifier">py</span>&gt;&gt;=
 </div>
 <div class="ltx_listingline">
@@ -482,12 +482,10 @@ dict</span>(<span class="ltx_text ltx_lst_identifier">omega</span>=<span class="
 <div class="ltx_listingline">
 <span class="ltx_text ltx_lst_identifier">@</span>
 </div>
-<div class="ltx_listingline">\<span class="ltx_text ltx_lst_identifier">end</span>{<span class="ltx_text ltx_lst_identifier">lstlising</span>}
 </div>
-<div class="ltx_listingline">Рассмотрим<span class="ltx_text ltx_lst_space"> </span>пример<span class="ltx_text ltx_lst_space"> </span>с<span class="ltx_text ltx_lst_space"> </span>правильным<span class="ltx_text ltx_lst_space"> </span>кубиком.
-</div>
-<div class="ltx_listingline">\<span class="ltx_text ltx_lst_identifier">begin</span>{<span class="ltx_text ltx_lst_identifier">lstlisting</span>}[<span class="ltx_text ltx_lst_identifier">language</span>=<span class="ltx_text ltx_lst_identifier">Python</span>]
-</div>
+<p class="ltx_p">Рассмотрим пример с правильным кубиком.</p>
+<div class="ltx_listing ltx_lst_language_Python ltx_lstlisting ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,PDxwcm9iMS5weT4+PQpmcm9tIGZyYWN0aW9ucyBpbXBvcnQgRnJhY3Rpb24KcCA9IEZyYWN0aW9u%0AKCcxLzYnKQpwQ3ViZSA9IEREaXN0KHsxOnAsIDI6cCwgMzpwLCA0OnAsIDU6cCwgNjpwfSkKQ3Vi%0AZSA9IG1ha2VQcm9iRmllbGQoJ0N1YmUnLCBwQ3ViZSkKYSA9IEN1YmUobGFtYmRhIHg6IHggJSAy%0AID09IDApCmIgPSBDdWJlKGxhbWJkYSB4OiB4ID4gMykKZCA9IGEgKyBiCnByaW50KGYne2F9IHBy%0Ab2I9e2EucHJvYn0nKQpwcmludChmJ3tifSBwcm9iPSB7Yi5wcm9ifScpCnByaW50KGYne2R9IHBy%0Ab2IgPSB7ZC5wcm9ifScpCkA=%0A">⬇</a></div>
 <div class="ltx_listingline">&lt;&lt;<span class="ltx_text ltx_lst_identifier">prob1</span>.<span class="ltx_text ltx_lst_identifier">py</span>&gt;&gt;=
 </div>
 <div class="ltx_listingline">
@@ -502,7 +500,7 @@ import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text
 <span class="ltx_text ltx_lst_identifier">pCube</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">DDist</span>({1:<span class="ltx_text ltx_lst_identifier">p</span>,<span class="ltx_text ltx_lst_space"> </span>2:<span class="ltx_text ltx_lst_identifier">p</span>,<span class="ltx_text ltx_lst_space"> </span>3:<span class="ltx_text ltx_lst_identifier">p</span>,<span class="ltx_text ltx_lst_space"> </span>4:<span class="ltx_text ltx_lst_identifier">p</span>,<span class="ltx_text ltx_lst_space"> </span>5:<span class="ltx_text ltx_lst_identifier">p</span>,<span class="ltx_text ltx_lst_space"> </span>6:<span class="ltx_text ltx_lst_identifier">p</span>})
 </div>
 <div class="ltx_listingline">
-<span class="ltx_text ltx_lst_identifier">Cube</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">makeProbField</span>(<span class="ltx_text ltx_lst_string">"Cube"missing</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">pCube</span>)
+<span class="ltx_text ltx_lst_identifier">Cube</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">makeProbField</span>(<span class="ltx_text ltx_lst_string">’Cube’</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">pCube</span>)
 </div>
 <div class="ltx_listingline">
 <span class="ltx_text ltx_lst_identifier">a</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Cube</span>(<span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
@@ -517,15 +515,15 @@ lambda</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text
 </div>
 <div class="ltx_listingline">
 <span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
-print</span>(<span class="ltx_text ltx_lst_identifier">f</span><span class="ltx_text ltx_lst_string">"{a}<span class="ltx_text ltx_lst_space"> </span>prob={a.prob}"missing</span>)
+print</span>(<span class="ltx_text ltx_lst_identifier">f</span><span class="ltx_text ltx_lst_string">’{a}<span class="ltx_text ltx_lst_space"> </span>prob={a.prob}’</span>)
 </div>
 <div class="ltx_listingline">
 <span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
-print</span>(<span class="ltx_text ltx_lst_identifier">f</span><span class="ltx_text ltx_lst_string">"{b}<span class="ltx_text ltx_lst_space"> </span>prob=<span class="ltx_text ltx_lst_space"> </span>{b.prob}"missing</span>)
+print</span>(<span class="ltx_text ltx_lst_identifier">f</span><span class="ltx_text ltx_lst_string">’{b}<span class="ltx_text ltx_lst_space"> </span>prob=<span class="ltx_text ltx_lst_space"> </span>{b.prob}’</span>)
 </div>
 <div class="ltx_listingline">
 <span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
-print</span>(<span class="ltx_text ltx_lst_identifier">f</span><span class="ltx_text ltx_lst_string">"{d}<span class="ltx_text ltx_lst_space"> </span>prob<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{d.prob}"missing</span>)
+print</span>(<span class="ltx_text ltx_lst_identifier">f</span><span class="ltx_text ltx_lst_string">’{d}<span class="ltx_text ltx_lst_space"> </span>prob<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{d.prob}’</span>)
 </div>
 <div class="ltx_listingline">
 <span class="ltx_text ltx_lst_identifier">@</span>
@@ -551,7 +549,7 @@ print</span>(<span class="ltx_text ltx_lst_identifier">f</span><span class="ltx_
 </article>
 </div>
 <footer class="ltx_page_footer">
-<div class="ltx_page_logo">Generated  on Mon Apr 22 09:18:14 2019 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+<div class="ltx_page_logo">Generated  on Mon Apr 22 20:24:49 2019 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
 </div></footer>
 </div>
 </body>
