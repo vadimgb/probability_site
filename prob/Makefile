@@ -1,6 +1,6 @@
 all: html/prob.html html/prob1.html
 html/prob.html: prob.nw test.tex ddist.py
-	latexml test.tex | latexmlpost - --format=html5 --destination=html/probH.html 
+	latexml test.tex | latexmlpost - --format=html4 --destination=html/probH.html 
 	sed '10r help1.txt' html/probH.html > html/probH.txt
 	sed '16r help2.txt' html/probH.txt > html/prob.html
 #	pdflatex test.tex
