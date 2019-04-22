@@ -181,6 +181,7 @@ $$
 \begin{equation}\label{bayes}
 P(A_i \mid B) = \frac{P(A_i) P(B \mid A_i)}{P(A_1)P(B \mid A_1) + P(A_2)P(B \mid A_2) + .. +P(A_n) P(B\mid A_n)}.
 \end{equation}
+\end{theorem}
 \begin{proof}
 В формулу (\ref{bayesH}), подставим  (\ref{total})
 \end{proof}
