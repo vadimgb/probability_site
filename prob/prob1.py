@@ -24,6 +24,21 @@ class DDist(dict):
                     k = removeElt(oldK, i)
                     incrDictEntry(d, k, self[oldK])
                 return d 
+        def conditionOnVar(self, index, val):
+                res = DDist() 
+                norm = 0
+                for k in self:
+                        if k[index] == val:
+                                norm += self[k]
+                for k in self:
+                        if k[index] == val:
+                                kn = removeElt(k, index)
+                                res[kn] = self[k]/norm
+                return res      
+        def condDist(self, index):
+                '''Только для совместного распределена,
+                находит условное распределение'''
+                return lambda x: self.conditionOnVar(index, x)
 
 p1=DDist(H=0.5, T=0.5)
 print(p1)
@@ -41,11 +56,11 @@ def JDist(B, AgB):
 def descartes(a, b):
         '''Вспомогательная функция
         объединяет значения величин в tuple'''
-        if type(a) == tuple and type(b) == tuple:
+        if isinstance(a, tuple) and isinstance(b, tuple):
                 return a + b
-        elif type(a) == tuple:
+        elif isinstance(a, tuple):
                 return a + (b,)
-        elif type(b) == tuple:
+        elif isinstance(b, tuple):
                 reutrn (a,) + b
         else:
                 return (a, b)
@@ -62,6 +77,17 @@ print(PAB)
 PAB = DDist({('H', 'H'):1/4, ('H', 'T'):1/4, ('T', 'H'):1/4, ('T', 'T'):1/4})
 PA = PAB.marginalizeOut(1)
 print(PA)
+print(PAB.conditionOnVar(1,"H"))
+def bayes(pA, PBgA, b):
+        return JDist(pA, PBgA).conditionOnVar(1, b)
+pDis=DDist({True: 0.001, False: 0.999})
+def pTestGivenDis(disease):
+        if disease:
+                return DDist({True: 0.99, False: 0.01})
+        else:
+                return DDist({True: 0.001, False: 0.999})
+
+print(bayes(pDis, pTestGivenDis, True))
 def makeProbField(name, omega):
         '''omega объект класса DDist, 
          функция возвращает класс событие

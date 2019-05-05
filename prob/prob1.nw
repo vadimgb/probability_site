@@ -1,6 +1,5 @@
-\section{Исходный код}
 \href{src.zip}{Исходный код к теме}
-\subsection{Поле вероятностей}
+\section{Поле вероятностей}
 Задать поле вероятностей можно, указав для каждого
 элементарного события его вероятность.
 \begin{lstlisting}[language=Python]
@@ -8,6 +7,7 @@
 <<вспомогательные функции>>
 class DDist(dict):
 	<<маргинальное распределение>>	
+	<<условие на переменную>>
 
 p1=DDist(H=0.5, T=0.5)
 print(p1)
@@ -30,11 +30,11 @@ def JDist(B, AgB):
 def descartes(a, b):
 	'''Вспомогательная функция
 	объединяет значения величин в tuple'''
-	if type(a) == tuple and type(b) == tuple:
+	if isinstance(a, tuple) and isinstance(b, tuple):
 		return a + b
-	elif type(a) == tuple:
+	elif isinstance(a, tuple):
 		return a + (b,)
-	elif type(b) == tuple:
+	elif isinstance(b, tuple):
 		reutrn (a,) + b
 	else:
 		return (a, b)
@@ -99,13 +99,60 @@ def incrDictEntry(d, k, v):
 
 @
 \end{lstlisting}
-\subsection{События}
+\section{Условное распределение}
+\begin{lstlisting}[language=Python]
+<<условие на переменную>>=
+def conditionOnVar(self, index, val):
+	res = DDist() 
+	norm = 0
+	for k in self:
+		if k[index] == val:
+			norm += self[k]
+	for k in self:
+		if k[index] == val:
+			kn = removeElt(k, index)
+			res[kn] = self[k]/norm
+	return res	
+def condDist(self, index):
+	'''Только для совместного распределена,
+	находит условное распределение'''
+	return lambda x: self.conditionOnVar(index, x)
+@
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+<<prob1.py>>=
+print(PAB.conditionOnVar(1,"H"))
+@
+\end{lstlisting}
+
+\section{Правило Байеса}
+\begin{lstlisting}[language=Python]
+<<prob1.py>>=
+def bayes(pA, PBgA, b):
+	return JDist(pA, PBgA).conditionOnVar(1, b)
+@
+\end{lstlisting}
+Пример.
+\begin{lstlisting}[language=Python]
+<<prob1.py>>=
+pDis=DDist({True: 0.001, False: 0.999})
+def pTestGivenDis(disease):
+	if disease:
+		return DDist({True: 0.99, False: 0.01})
+	else:
+		return DDist({True: 0.001, False: 0.999})
+
+print(bayes(pDis, pTestGivenDis, True))
+@
+\end{lstlisting}
+
+\section{События}
 Мы будем задавать события как объекты класса.
-Но для разных полей вероятностей нам понадобятся
-разные классы. Поэтому мы определим функцию, которая
-будет генерировать классы.
-Пространство элементарных событий и их вероятности
-полностью  определяют класс событий.
+Для разных полей вероятностей нам понадобятся
+разные классы. Mы определим функцию, которая
+для заданного поля вероятностей (объекста класса DDist) 
+генерирует класс событие.
 \begin{lstlisting}[language=Python]
 <<prob1.py>>=
 def makeProbField(name, omega):
