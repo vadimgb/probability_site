@@ -3,19 +3,17 @@
 Задать поле вероятностей можно, указав для каждого
 элементарного события его вероятность.
 \begin{lstlisting}[language=Python]
-<<prob1.py>>=
+<<ddist.py>>=
 <<вспомогательные функции>>
 class DDist(dict):
 	<<маргинальное распределение>>	
 	<<условие на переменную>>
 
-p1=DDist(H=0.5, T=0.5)
-print(p1)
 @
 \end{lstlisting}
 \subsection{Совместное распределение}
 \begin{lstlisting}[language=Python]
-<<prob1.py>>=
+<<ddist.py>>=
 def JDist(B, AgB):
 	'''B распределение случайной величины,
 	AgB условное распределение'''
@@ -43,7 +41,8 @@ def descartes(a, b):
 \end{lstlisting}
 Приведём пример
 \begin{lstlisting}[language=Python]
-<<prob1.py>>=
+<<test.py>>=
+from ddist import *
 PA = DDist({'a1':0.9, 'a2':0.1})
 def PBgA(a):
 	if a == 'a1':
@@ -72,7 +71,7 @@ def marginalizeOut(self, i):
 \end{lstlisting}
 
 \begin{lstlisting}[language=Python]
-<<prob1.py>>=
+<<test.py>>=
 PAB = DDist({('H', 'H'):1/4, ('H', 'T'):1/4, ('T', 'H'):1/4, ('T', 'T'):1/4})
 PA = PAB.marginalizeOut(1)
 print(PA)
@@ -121,21 +120,21 @@ def condDist(self, index):
 \end{lstlisting}
 
 \begin{lstlisting}[language=Python]
-<<prob1.py>>=
+<<test.py>>=
 print(PAB.conditionOnVar(1,"H"))
 @
 \end{lstlisting}
 
 \section{Правило Байеса}
 \begin{lstlisting}[language=Python]
-<<prob1.py>>=
+<<ddist.py>>=
 def bayes(pA, PBgA, b):
 	return JDist(pA, PBgA).conditionOnVar(1, b)
 @
 \end{lstlisting}
 Пример.
 \begin{lstlisting}[language=Python]
-<<prob1.py>>=
+<<test.py>>=
 pDis=DDist({True: 0.001, False: 0.999})
 def pTestGivenDis(disease):
 	if disease:
@@ -154,7 +153,7 @@ print(bayes(pDis, pTestGivenDis, True))
 для заданного поля вероятностей (объекста класса DDist) 
 генерирует класс событие.
 \begin{lstlisting}[language=Python]
-<<prob1.py>>=
+<<ddist.py>>=
 def makeProbField(name, omega):
 	'''omega объект класса DDist, 
 	 функция возвращает класс событие
@@ -192,7 +191,7 @@ def makeProbField(name, omega):
 \end{lstlisting}
 Рассмотрим пример с правильным кубиком.
 \begin{lstlisting}[language=Python]
-<<prob1.py>>=
+<<test.py>>=
 from fractions import Fraction
 p = Fraction(1, 6)
 pCube = DDist({1:p, 2:p, 3:p, 4:p, 5:p, 6:p})

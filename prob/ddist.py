@@ -40,8 +40,6 @@ class DDist(dict):
                 находит условное распределение'''
                 return lambda x: self.conditionOnVar(index, x)
 
-p1=DDist(H=0.5, T=0.5)
-print(p1)
 def JDist(B, AgB):
         '''B распределение случайной величины,
         AgB условное распределение'''
@@ -65,29 +63,8 @@ def descartes(a, b):
         else:
                 return (a, b)
 
-PA = DDist({'a1':0.9, 'a2':0.1})
-def PBgA(a):
-        if a == 'a1':
-                return DDist({'b1':0.7, 'b2':0.3})
-        else:
-                return DDist({'b1':0.2, 'b2':0.8})
-
-PAB = JDist(PA, PBgA)
-print(PAB)
-PAB = DDist({('H', 'H'):1/4, ('H', 'T'):1/4, ('T', 'H'):1/4, ('T', 'T'):1/4})
-PA = PAB.marginalizeOut(1)
-print(PA)
-print(PAB.conditionOnVar(1,"H"))
 def bayes(pA, PBgA, b):
         return JDist(pA, PBgA).conditionOnVar(1, b)
-pDis=DDist({True: 0.001, False: 0.999})
-def pTestGivenDis(disease):
-        if disease:
-                return DDist({True: 0.99, False: 0.01})
-        else:
-                return DDist({True: 0.001, False: 0.999})
-
-print(bayes(pDis, pTestGivenDis, True))
 def makeProbField(name, omega):
         '''omega объект класса DDist, 
          функция возвращает класс событие
@@ -121,13 +98,3 @@ def makeProbField(name, omega):
         return type(name, (object,), dict(omega=omega,
          __init__ = __init__, prob=prob, __add__=__add__, __mul__=__mul__, 
         __sub__=__sub__, __str__=__str__))
-from fractions import Fraction
-p = Fraction(1, 6)
-pCube = DDist({1:p, 2:p, 3:p, 4:p, 5:p, 6:p})
-Cube = makeProbField('Cube', pCube)
-a = Cube(lambda x: x % 2 == 0)
-b = Cube(lambda x: x > 3)
-d = a + b
-print(f'{a} prob={a.prob}')
-print(f'{b} prob= {b.prob}')
-print(f'{d} prob = {d.prob}')
