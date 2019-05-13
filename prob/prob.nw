@@ -236,4 +236,3 @@ $$
 E(XY)=\sum x_{j}y_{i}P(X=x_{j} and Y=y_{i})=\sum x_{j} y_{i}P(X=x_{j})P(Y=y_{i})=\sum x_{j}P(X=x_{j}) \sum y_i P(Y=y_i) = E(X)E(Y)
 $$
 
-

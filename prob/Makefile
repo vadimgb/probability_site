@@ -1,4 +1,4 @@
-all: html/prob.html html/prob1.html html/src.zip
+all: html/prob.html html/prob1.html html/src.zip html/limit.html
 html/prob.html: prob.nw test.tex 
 	latexml test.tex | latexmlpost - --format=html4 --destination=html/probH.html 
 	sed '10r help1.txt' html/probH.html > html/probH.txt
@@ -22,5 +22,13 @@ ddist.py: prob1.nw
 	notangle -Rddist.py prob1.nw > ddist.py
 test.py: prob1.nw
 	notangle -Rtest.py prob1.nw > test.py
+
+
+html/limit.html: limit.nw test1.tex  help1.txt 
+	latexml limit.tex | latexmlpost - --format=html5 --destination=html/probH.html
+	sed '10r help1.txt' html/probH.html > html/probH.txt
+	sed '16r help2.txt' html/probH.txt > html/limit.html
+
+
 clean:
-	rm ddist.py html/prob.html html/prob1.html test.py  
+	rm ddist.py html/prob.html html/prob1.html html/limit.html test.py html/src.zip 

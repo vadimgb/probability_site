@@ -1,0 +1,46 @@
+\section{Центральная предельная теорема}
+Рассмотрим выборочное среднее
+\begin{equation}
+M_n=\frac{X_1+X_2+X_3...+X_n}{n}
+\end{equation}
+Применяя свойства для математического ожидания и дисперсии
+найдём
+\begin{equation}
+E(M_n)=\frac{E(X_1+X_2...+X_n)}{n}=\frac{nE(X)}{n}=E(X)=\mu
+\end{equation}
+\begin{equation}
+V(M_n)=\frac{V(X_1+X_2..+X_n)}{n^2}=\frac{nV(X)}{n^2}=\frac{V(x)}{n}=\frac{\sigma^2}{n}
+\end{equation}
+При больших n выборочное среднее сконцентрировано у $\mu$.
+Определим случайную величину $Z_n$
+\begin{equation}
+Z_n=\frac{X_1+X_2..+X_n - n \mu}{\sqrt{n}\sigma}
+\end{equation}
+Величина $Z_n$ имеет математическое ожидание 0 и дисперсию 1.
+\begin{theorem}(Центральная предельная теорема)
+Пусть $X_1, X_2...$ независимые, одинаково распределённые случайные
+величины с математическим ожиданием $\mu$, стандартным отклонением
+$\sigma$, и определена
+\begin{equation}
+Z_n=\frac{X_1+X_2..+X_n - n \mu}{\sqrt{n}\sigma}
+\end{equation}
+Тогда, кумулятивная функция распределения $Z_n$ сходится к 
+кумулятивной функции распределения стандартного нормального
+\begin{equation}
+\Phi(z)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^z e^{-x^{2}/2}dx,
+\end{equation}
+в смысле, что 
+\begin{equation}
+\lim_{n \rightarrow \infty}P(Z_n \le z) = \Phi(z), 
+\end{equation}
+для всех $z$.
+\end{theorem}
+
+ 
+
+
+
+   
+
+
+
