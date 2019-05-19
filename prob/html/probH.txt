@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ru">
 <head>
-<title>python и теория вероятностей</title>
-<!--Generated on Mon May 13 09:30:00 2019 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+<title>Центральная предельная теорема</title>
+<!--Generated on Sun May 19 13:36:59 2019 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
@@ -16,8 +16,12 @@
 <div class="ltx_page_main">
 <div class="ltx_page_content">
 <article class="ltx_document ltx_authors_1line">
-<h1 class="ltx_title ltx_title_document">python и теория вероятностей</h1>
+<h1 class="ltx_title ltx_title_document">Центральная предельная теорема</h1>
 
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Более подробно материал этой части смотри
+D.P. Bertsekas. Introduction to probability, 2-nd edition, 2008, p275-277.</p>
+</div>
 <section id="S1" class="ltx_section">
 <h2 class="ltx_title ltx_title_section">
 <span class="ltx_tag ltx_tag_section">1 </span>Центральная предельная теорема</h2>
@@ -68,10 +72,10 @@ n}=\frac{\sigma^{2}}{n}" display="block"><mrow><mrow><mi>V</mi><mo>⁢</mo><mrow
 <p class="ltx_p">Величина <math id="S1.p1.m3" class="ltx_Math" alttext="Z_{n}" display="inline"><msub><mi>Z</mi><mi>n</mi></msub></math> имеет математическое ожидание 0 и дисперсию 1.</p>
 </div>
 <div id="Thmtheorem1" class="ltx_theorem ltx_theorem_theorem">
-<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem"><span class="ltx_tag ltx_tag_theorem">Теорема 1</span></h6>
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem">Теорема 1</span> (Центральная предельная теорема)</h6>
 <div id="Thmtheorem1.p1" class="ltx_para">
-<p class="ltx_p"><span class="ltx_text ltx_font_italic">(Центральная предельная теорема)
-Пусть <math id="Thmtheorem1.p1.m1" class="ltx_Math" alttext="X_{1},X_{2}..." display="inline"><mrow><msub><mi>X</mi><mn mathvariant="normal">1</mn></msub><mo mathvariant="normal">,</mo><mrow><msub><mi>X</mi><mn mathvariant="normal">2</mn></msub><mo mathvariant="italic">⁢</mo><mi mathvariant="normal">…</mi></mrow></mrow></math> независимые, одинаково распределённые случайные
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Пусть <math id="Thmtheorem1.p1.m1" class="ltx_Math" alttext="X_{1},X_{2}..." display="inline"><mrow><msub><mi>X</mi><mn mathvariant="normal">1</mn></msub><mo mathvariant="normal">,</mo><mrow><msub><mi>X</mi><mn mathvariant="normal">2</mn></msub><mo mathvariant="italic">⁢</mo><mi mathvariant="normal">…</mi></mrow></mrow></math> независимые, одинаково распределённые случайные
 величины с математическим ожиданием <math id="Thmtheorem1.p1.m2" class="ltx_Math" alttext="\mu" display="inline"><mi>μ</mi></math>, стандартным отклонением
 <math id="Thmtheorem1.p1.m3" class="ltx_Math" alttext="\sigma" display="inline"><mi>σ</mi></math>, и определена</span></p>
 <table id="S1.E5" class="ltx_equation ltx_eqn_table">
@@ -107,17 +111,187 @@ n}=\frac{\sigma^{2}}{n}" display="block"><mrow><mrow><mi>V</mi><mo>⁢</mo><mrow
 <p class="ltx_p"><span class="ltx_text ltx_font_italic">для всех <math id="Thmtheorem1.p1.m5" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math>.</span></p>
 </div>
 </div>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2 </span>Аппроксимация базирующаяся на центральной предельной теореме</h2>
+
+<div id="Thmtheorem2" class="ltx_theorem ltx_theorem_theorem">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem">Теорема 2</span> (Аппроксимация базирующаяся
+на центральной предельной теореме)</h6>
+<div id="Thmtheorem2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Пусть <math id="Thmtheorem2.p1.m1" class="ltx_Math" alttext="S_{n}=X_{1}+X_{2}+..X_{n}" display="inline"><mrow><msub><mi>S</mi><mi>n</mi></msub><mo mathvariant="normal">=</mo><msub><mi>X</mi><mn mathvariant="normal">1</mn></msub><mo mathvariant="normal">+</mo><msub><mi>X</mi><mn mathvariant="normal">2</mn></msub><mo mathvariant="normal">+</mo><mo mathvariant="normal">.</mo><mo mathvariant="normal">.</mo><msub><mi>X</mi><mi>n</mi></msub></mrow></math>, где <math id="Thmtheorem2.p1.m2" class="ltx_Math" alttext="X_{i}" display="inline"><msub><mi>X</mi><mi>i</mi></msub></math> независимые
+идентично распределённые случайные величины с математическим ожиданием <math id="Thmtheorem2.p1.m3" class="ltx_Math" alttext="\mu" display="inline"><mi>μ</mi></math> и дисперсией <math id="Thmtheorem2.p1.m4" class="ltx_Math" alttext="\sigma^{2}" display="inline"><msup><mi>σ</mi><mn mathvariant="normal">2</mn></msup></math>.
+Если <math id="Thmtheorem2.p1.m5" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> большое, то вероятность <math id="Thmtheorem2.p1.m6" class="ltx_Math" alttext="P(S_{n}\leq c)" display="inline"><mrow><mi>P</mi><mrow><mo mathvariant="normal" stretchy="false">(</mo><msub><mi>S</mi><mi>n</mi></msub><mo mathvariant="normal">≤</mo><mi>c</mi><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow></math>,
+можно аппроксимировать так, как если бы <math id="Thmtheorem2.p1.m7" class="ltx_Math" alttext="S_{n}" display="inline"><msub><mi>S</mi><mi>n</mi></msub></math> была нормальной, используя следующую процедуру.</span></p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate"><span class="ltx_text ltx_font_italic">1.</span></span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Вычисляем математическое ожидание </span><math id="I1.i1.p1.m1" class="ltx_Math" alttext="n\mu" display="inline"><mrow><mi>n</mi><mo>⁢</mo><mi>μ</mi></mrow></math><span class="ltx_text ltx_font_italic"> и
+</span><span class="ltx_text ltx_font_italic">дисперсию </span><math id="I1.i1.p1.m2" class="ltx_Math" alttext="n\sigma^{2}" display="inline"><mrow><mi>n</mi><mo>⁢</mo><msup><mi>σ</mi><mn>2</mn></msup></mrow></math><span class="ltx_text ltx_font_italic"> для </span><math id="I1.i1.p1.m3" class="ltx_Math" alttext="S_{n}" display="inline"><msub><mi>S</mi><mi>n</mi></msub></math><span class="ltx_text ltx_font_italic">.</span></p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate"><span class="ltx_text ltx_font_italic">2.</span></span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Вычисляем нормализованную величину </span><math id="I1.i2.p1.m1" class="ltx_Math" alttext="z=(c-n\mu)/(\sigma\sqrt{n})" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>c</mi><mo>-</mo><mrow><mi>n</mi><mo>⁢</mo><mi>μ</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>/</mo><mrow><mo stretchy="false">(</mo><mrow><mi>σ</mi><mo>⁢</mo><msqrt><mi>n</mi></msqrt></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math><span class="ltx_text ltx_font_italic">.</span></p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_enumerate"><span class="ltx_text ltx_font_italic">3.</span></span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Используем аппроксимацию</span></p>
+<table id="S2.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.Ex1.m1" class="ltx_Math" alttext="P(S_{n}\leq c)\approx\Phi(z)," display="block"><mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><msub><mi>S</mi><mi>n</mi></msub><mo>≤</mo><mi>c</mi><mo stretchy="false">)</mo></mrow><mo>≈</mo><mi mathvariant="normal">Φ</mi><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">где </span><math id="I1.i3.p1.m1" class="ltx_Math" alttext="\Phi(z)" display="inline"><mrow><mi mathvariant="normal">Φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></math><span class="ltx_text ltx_font_italic"> кумулятивная функция плотности стандартного нормального распределения.</span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="Thmexamp1" class="ltx_theorem ltx_theorem_examp">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem"><span class="ltx_tag ltx_tag_theorem">Пример 1</span></h6>
+<div id="Thmexamp1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Мы загружаем на самолёт 100 пакетов, их веса –
+независимые случайные величины с равномерным
+распределением от 5 до 50 кг. Какова вероятность,
+что полный вес превысит 3000 кг.</span></p>
+</div>
+</div>
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">Мы хотим вычислить вероятность,
+что <math id="S2.p1.m1" class="ltx_Math" alttext="P(S_{100}&gt;3000)" display="inline"><mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><msub><mi>S</mi><mn>100</mn></msub><mo>&gt;</mo><mn>3000</mn><mo stretchy="false">)</mo></mrow></mrow></math>, где
+<math id="S2.p1.m2" class="ltx_Math" alttext="S_{100}" display="inline"><msub><mi>S</mi><mn>100</mn></msub></math> сумма весов 100 пакетов.
+Математическое ожидание веса одного пакета</p>
+<table id="S2.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.Ex2.m1" class="ltx_Math" alttext="\mu=\int_{5}^{50}\frac{x}{50-5}dx=\frac{5+50}{2}=27.5" display="block"><mrow><mi>μ</mi><mo>=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mn>5</mn><mn>50</mn></msubsup><mrow><mfrac><mi>x</mi><mrow><mn>50</mn><mo>-</mo><mn>5</mn></mrow></mfrac><mo>⁢</mo><mrow><mo>𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mfrac><mrow><mn>5</mn><mo>+</mo><mn>50</mn></mrow><mn>2</mn></mfrac><mo>=</mo><mn>27.5</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p">Дисперсия одного пакета</p>
+<table id="S2.Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.Ex3.m1" class="ltx_Math" alttext="\sigma^{2}=\frac{(50-5)^{2}}{12}=168.75" display="block"><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mn>50</mn><mo>-</mo><mn>5</mn></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mn>12</mn></mfrac><mo>=</mo><mn>168.75</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Эти результаты можно получить с помощью пакета sympy для символьных вычислений.</p>
+<div class="ltx_listing ltx_lst_language_Python ltx_lstlisting ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,PDxsaW1pdC5weT4+PQpmcm9tIHN5bXB5IGltcG9ydCBTeW1ib2wsIGludGVncmF0ZQp4ID0gU3lt%0AYm9sKCd4JykKbXUgPSBpbnRlZ3JhdGUoeC8oNTAtNSksICh4LDUsIDUwKSkKcHJpbnQoZiJtdT17%0AbXV9PXtmbG9hdChtdSl9IikKZVgyID0gaW50ZWdyYXRlKHgqKjIvKDUwLTUpLCAoeCwgNSwgNTAp%0AKQpwcmludChmIkUoWF4yKSA9IHtlWDJ9IikKc2lnbWEyID0gZVgyLW11KioyCnByaW50KGYic2ln%0AbWFeMiA9IEUoWF4yKSAtIEUoWCleMiA9IHtzaWdtYTJ9ID0ge2Zsb2F0KHNpZ21hMil9IikKQA==%0A">⬇</a></div>
+<div class="ltx_listingline">&lt;&lt;<span class="ltx_text ltx_lst_identifier">limit</span>.<span class="ltx_text ltx_lst_identifier">py</span>&gt;&gt;=
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
+from</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">sympy</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
+import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Symbol</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">integrate</span>
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">x</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Symbol</span>(<span class="ltx_text ltx_lst_string">’x’</span>)
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">mu</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">integrate</span>(<span class="ltx_text ltx_lst_identifier">x</span>/(50-5),<span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_identifier">x</span>,5,<span class="ltx_text ltx_lst_space"> </span>50))
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
+print</span>(<span class="ltx_text ltx_lst_identifier">f</span><span class="ltx_text ltx_lst_string">"mu={mu}={float(mu)}"missing</span>)
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">eX2</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">integrate</span>(<span class="ltx_text ltx_lst_identifier">x</span>**2/(50-5),<span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_identifier">x</span>,<span class="ltx_text ltx_lst_space"> </span>5,<span class="ltx_text ltx_lst_space"> </span>50))
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
+print</span>(<span class="ltx_text ltx_lst_identifier">f</span><span class="ltx_text ltx_lst_string">"E(X^2)<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{eX2}"missing</span>)
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">sigma2</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">eX2</span>-<span class="ltx_text ltx_lst_identifier">mu</span>**2
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
+print</span>(<span class="ltx_text ltx_lst_identifier">f</span><span class="ltx_text ltx_lst_string">"sigma^2<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>E(X^2)<span class="ltx_text ltx_lst_space"> </span>-<span class="ltx_text ltx_lst_space"> </span>E(X)^2<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{sigma2}<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{float(sigma2)}"missing</span>)
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">@</span>
+</div>
+</div>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p class="ltx_p">Вычислим нормализованную величину <math id="S2.p3.m1" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math></p>
+<table id="S2.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.Ex4.m1" class="ltx_Math" alttext="z=\frac{300-100\cdot 27.5}{\sqrt{168.75\cdot 100}}=1.92" display="block"><mrow><mi>z</mi><mo>=</mo><mfrac><mrow><mn>300</mn><mo>-</mo><mrow><mn>100</mn><mo>⋅</mo><mn>27.5</mn></mrow></mrow><msqrt><mrow><mn>168.75</mn><mo>⋅</mo><mn>100</mn></mrow></msqrt></mfrac><mo>=</mo><mn>1.92</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Получаем</p>
+<table id="S2.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.Ex5.m1" class="ltx_Math" alttext="P(S_{100}\leq 3000)\approx\Phi(1.92)=0.9726." display="block"><mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><msub><mi>S</mi><mn>100</mn></msub><mo>≤</mo><mn>3000</mn><mo stretchy="false">)</mo></mrow><mo>≈</mo><mi mathvariant="normal">Φ</mi><mrow><mo stretchy="false">(</mo><mn>1.92</mn><mo stretchy="false">)</mo></mrow><mo>=</mo><mn>0.9726</mn><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Тогда, искомая вероятность</p>
+<table id="S2.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S2.Ex6.m1" class="ltx_Math" alttext="P(S_{100}&gt;3000)=1-P(S_{100}\leq 3000)\approx=0.0274." display="block"><mrow><mi>P</mi><mrow><mo stretchy="false">(</mo><msub><mi>S</mi><mn>100</mn></msub><mo>&gt;</mo><mn>3000</mn><mo stretchy="false">)</mo></mrow><mo>=</mo><mn>1</mn><mo>-</mo><mi>P</mi><mrow><mo stretchy="false">(</mo><msub><mi>S</mi><mn>100</mn></msub><mo>≤</mo><mn>3000</mn><mo stretchy="false">)</mo></mrow><mo>≈</mo><mo>=</mo><mn>0.0274</mn><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Используем модуль stats пакета scipy python для
+вычисления значения кумулятивной функции стандартного
+нормального распределения</p>
+</div>
+<div id="S2.p4" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lstlisting ltx_listing">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,PDxsaW1pdC5weT4+PQpmcm9tIHNjaXB5LnN0YXRzIGltcG9ydCBub3JtCnByaW50KDEtbm9ybS5j%0AZGYoMS45MikpCkA=%0A">⬇</a></div>
+<div class="ltx_listingline">&lt;&lt;<span class="ltx_text ltx_lst_identifier">limit</span>.<span class="ltx_text ltx_lst_identifier">py</span>&gt;&gt;=
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
+from</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">scipy</span>.<span class="ltx_text ltx_lst_identifier">stats</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
+import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">norm</span>
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">
+print</span>(1-<span class="ltx_text ltx_lst_identifier">norm</span>.<span class="ltx_text ltx_lst_identifier">cdf</span>(1.92))
+</div>
+<div class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">@</span>
+</div>
+</div>
+</div>
 <div class="ltx_TOC ltx_role_contents">
 <h6>Содержание:</h6>
 <ul class="ltx_toclist">
-<li class="ltx_tocentry ltx_tocentry_section"><a href="#S1" title="1 Центральная предельная теорема ‣ python и теория вероятностей" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Центральная предельная теорема</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S1" title="1 Центральная предельная теорема ‣ Центральная предельная теорема" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Центральная предельная теорема</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#S2" title="2 Аппроксимация базирующаяся на центральной предельной теореме ‣ Центральная предельная теорема" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Аппроксимация базирующаяся на центральной предельной теореме</span></a></li>
 </ul>
 </div>
 </section>
 </article>
 </div>
 <footer class="ltx_page_footer">
-<div class="ltx_page_logo">Generated  on Mon May 13 09:30:00 2019 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+<div class="ltx_page_logo">Generated  on Sun May 19 13:36:59 2019 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
 </div></footer>
 </div>
 </body>

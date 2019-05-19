@@ -1,4 +1,4 @@
-all: html/prob.html html/prob1.html html/src.zip html/limit.html
+all: html/prob.html html/prob1.html html/src.zip html/limit.html 
 html/prob.html: prob.nw test.tex 
 	latexml test.tex | latexmlpost - --format=html4 --destination=html/probH.html 
 	sed '10r help1.txt' html/probH.html > html/probH.txt
@@ -7,7 +7,7 @@ html/prob.html: prob.nw test.tex
 #	pdflatex test.tex
 #--splitat=section --splitnaming=label 
 
-html/src.zip: prob.py ddist.py test.py	
+html/src.zip: prob.py ddist.py test.py limit.py	
 	zip html/src *.py	
 
 prob.py:  prob.nw
@@ -29,6 +29,8 @@ html/limit.html: limit.nw test1.tex  help1.txt
 	sed '10r help1.txt' html/probH.html > html/probH.txt
 	sed '16r help2.txt' html/probH.txt > html/limit.html
 
+limit.py: limit.nw
+	notangle -Rlimit.py limit.nw > limit.py
 
 clean:
 	rm ddist.py html/prob.html html/prob1.html html/limit.html test.py html/src.zip 
